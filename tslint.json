@@ -1,10 +1,10 @@
 {
-  "extends": "tslint:latest",
+  "extends": ["tslint:latest", "tslint-config-prettier"],
   "linterOptions": {
-      "exclude": [
-          "app/*.d.ts",
-          "app/vendor*.ts"
-      ]
+    "exclude": [
+      "app/*.d.ts",
+      "app/vendor*.ts"
+    ]
   },
   "rulesDirectory": [
     "node_modules/codelyzer"
@@ -14,7 +14,7 @@
     "arrow-return-shorthand": true,
     "component-class-suffix": true,
     "directive-class-suffix": true,
-    "member-access": [true, "no-public"],
+    "member-access": [true],
     "newline-before-return": true,
     "no-angle-bracket-type-assertion": false,
     "no-attribute-parameter-decorator": true,
@@ -33,6 +33,7 @@
     "object-literal-sort-keys": false,
     "one-variable-per-declaration": [true, "ignore-for-loop"],
     "pipe-naming": [true, "camelCase", "sg"],
+    "quotemark": false,
     "use-host-property-decorator": true,
     "use-input-property-decorator": true,
     "use-life-cycle-interface": true,
