@@ -18,7 +18,7 @@ export class PodcastService {
   public btnLoadTempData() {
     console.log('test');
 
-    this.addPodcastByUrl('http://twit.tv/ww.xml');
+    this.addPodcastByUrl('http://feeds.twit.tv/ww.xml');
   }
 
   public updatePodcastForce() {
@@ -26,10 +26,11 @@ export class PodcastService {
   }
 
   private addPodcastByUrl(url: string): void {
-    alert(this.httpClient.get(url, { responseType: 'text' }));
+    const podcasdf = this.httpClient.get(url, { responseType: 'text' });
+    // alert(podcasdf.subscribe(s => {}));
     this.httpClient.get(url, { responseType: 'text' }).subscribe(s => {
       //   this.parsePodcastXml(s);
-      alert(s);
+      console.log('asdf ' + s);
     });
   }
 
