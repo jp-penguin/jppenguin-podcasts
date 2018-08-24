@@ -13,9 +13,18 @@
     </ActionItem>
     <Label class="action-bar-title" text="Home"></Label>
 </ActionBar>
+<ScrollView orientation="vertical">
 
-<GridLayout class="page page-content">
-    <Label class="page-icon fa" text="&#xf015;"></Label>
-    <Label class="page-placeholder" text="<!-- Page content goes here -->"></Label>
-    <button class="btn-primary" id="btnTest" text="Test2" (tap)="btnTestClick()"></button>
-</GridLayout>
+    <GridLayout class="page page-content">
+        <Label class="page-icon fa" text="&#xf015;"></Label>
+        <Label class="page-placeholder" text="<!-- Page content goes here -->"></Label>
+
+        <StackLayout>
+            <button class="btn-primary" id="btnTest" text="Test2" (tap)="btnTestClick()"></button>
+            <StackLayout class="podcast" *ngFor="let podcast of podcastDataService.podcastsSubscribed" orientation="horizontal">
+                <Image class="podcast-list-image" [src]="podcast.imageUrl"></Image>
+                <label class="podcast-list-info" [text]="podcast.imageUrl"></label>
+            </StackLayout>
+        </StackLayout>
+    </GridLayout>
+</ScrollView>

@@ -8,6 +8,7 @@ import { NativeScriptUISideDrawerModule } from 'nativescript-ui-sidedrawer/angul
 
 import { HttpClientModule } from '@angular/common/http';
 import { PodcastService } from '~/services/podcast.service';
+import { PodcastDataService } from '~/services/PodcastDataService';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 
@@ -20,7 +21,7 @@ import { AppComponent } from './app.component';
     NativeScriptUISideDrawerModule
   ],
   declarations: [AppComponent],
-  providers: [PodcastService],
+  providers: [PodcastService, PodcastDataService],
   schemas: [NO_ERRORS_SCHEMA]
 })
 export class AppModule {}
