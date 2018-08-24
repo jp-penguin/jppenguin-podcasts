@@ -22,8 +22,10 @@
         <StackLayout>
             <button class="btn-primary" id="btnTest" text="Test2" (tap)="btnTestClick()"></button>
             <StackLayout class="podcast" *ngFor="let podcast of podcastDataService.podcastsSubscribed" orientation="horizontal">
-                <Image class="podcast-list-image" [src]="podcast.imageUrl"></Image>
-                <label class="podcast-list-info" [text]="podcast.imageUrl"></label>
+                <!-- [src]="podcast.imageUrl" -->
+                <Image stretch="none" class="podcast-list-image  img-rounded p-l-15 p-r-15 p-t-15">
+                </Image>
+                <label class=" podcast-list-info " text="alkjsdfoijwqeriojlknsdvkjdsfiojasifjaoisfjalksdfjaoisdfjoiasdfjioasjdfioajsdfioajsdf "></label>
             </StackLayout>
         </StackLayout>
     </GridLayout>

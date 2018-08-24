@@ -20,13 +20,17 @@ TextField {
 }
 
 .podcast-list-image {
-    width: 30%;
+    width: 100;
+    height: 100;
+    background: green;
 }
 
 .podcast-list-info {
-    width: 70%
+    height: 100;
+    width: 100%;
+    background: black;
 }
 
 .podcast {
-    height: 200;
+    height: 100;
 }
