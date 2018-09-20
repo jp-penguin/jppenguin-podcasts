@@ -1,78 +1,104 @@
-# NativeScript with Angular Drawer Navigation Template
+[![Angular Logo](./logo-angular.jpg)](https://angular.io/) [![Electron Logo](./logo-electron.jpg)](https://electron.atom.io/)
 
-App templates help you jump start your native cross-platform apps with built-in UI elements and best practices. Save time writing boilerplate code over and over again when you create new apps.
+[![Travis Build Status][build-badge]][build]
+[![Dependencies Status][dependencyci-badge]][dependencyci]
+[![Make a pull request][prs-badge]][prs]
+[![License](http://img.shields.io/badge/Licence-MIT-brightgreen.svg)](LICENSE.md)
 
-App template featuring a RadSideDrawer component for navigation. The RadSideDrawer component is part of [Progress NativeScript UI](https://github.com/telerik/nativescript-ui-feedback).
+[![Watch on GitHub][github-watch-badge]][github-watch]
+[![Star on GitHub][github-star-badge]][github-star]
+[![Tweet][twitter-badge]][twitter]
 
-<img src="/tools/assets/phone-drawer-ios.png" height="400" /> <img src="/tools/assets/phone-drawer-android.png" height="400" />
+# Introduction
 
-## Key Features
+Bootstrap and package your project with Angular 6(+) and Electron (Typescript + SASS + Hot Reload) for creating Desktop applications.
 
-- Side drawer navigation
-- Five blank pages hooked to the drawer navigation
-- Customizable theme
-- UX and development best practices
-- Easy to understand code
+Currently runs with:
 
-## Quick Start
+- Angular v6.1.2
+- Electron v2.0.7
+- Electron Builder v20.28.1
 
-Execute the following command to create an app from this template:
+With this sample, you can :
 
-``` shell
-tns create my-drawer-ng --template tns-template-drawer-navigation-ng
+- Run your app in a local development environment with Electron & Hot reload
+- Run your app in a production environment
+- Package your app into an executable file for Linux, Windows & Mac
+
+## Getting Started
+
+Clone this repository locally :
+
+``` bash
+git clone https://github.com/maximegris/angular-electron.git
 ```
 
-> Note: This command will create a new NativeScript app that uses the latest version of this template published to [npm](https://www.npmjs.com/package/tns-template-drawer-navigation-ng).
+Install dependencies with npm :
 
-If you want to create a new app that uses the source of the template from the `master` branch, you can execute the following:
-
-``` shell
-tns create my-drawer-ng --template https://github.com/NativeScript/template-drawer-navigation-ng
+``` bash
+npm install
 ```
 
-**NB:** Please, have in mind that the master branch may refer to dependencies that are not on NPM yet!
+There is an issue with `yarn` and `node_modules` that are only used in electron on the backend when the application is built by the packager. Please use `npm` as dependencies manager.
 
-## Walkthrough
 
-### Architecture
+If you want to generate Angular components with Angular-cli , you **MUST** install `@angular/cli` in npm global context.  
+Please follow [Angular-cli documentation](https://github.com/angular/angular-cli) if you had installed a previous version of `angular-cli`.
 
-The RadSideDrawer component is set up as an application starting point in:
+``` bash
+npm install -g @angular/cli
+```
 
-- `/app-component.ts` - sets up the side drawer content and defines a page router outlet for the pages.
+## To build for development
 
-RadSideDrawer has the following component structure:
+- **in a terminal window** -> npm start  
 
-- `RadSideDrawer` - The component to display a drawer on the page.
-- `tkDrawerContent` directive - Marks the component that will hold the drawer content.
-- `tkMainContent` directive - Marks the component that will hold the app main content.
+Voila! You can use your Angular + Electron app in a local development environment with hot reload !
 
-There are five blank components located in these folders:
+The application code is managed by `main.ts`. In this sample, the app runs with a simple Angular App (http://localhost:4200) and an Electron window.  
+The Angular component contains an example of Electron and NodeJS native lib import.  
+You can desactivate "Developer Tools" by commenting `win.webContents.openDevTools();` in `main.ts`.
 
-- `/browse`
-- `/featured`
-- `/home`
-- `/search`
-- `/settings`
+## Included Commands
 
-### Styling
+|Command|Description|
+|--|--|
+|`npm run ng:serve:web`| Execute the app in the browser |
+|`npm run build`| Build the app. Your built files are in the /dist folder. |
+|`npm run build:prod`| Build the app with Angular aot. Your built files are in the /dist folder. |
+|`npm run electron:local`| Builds your application and start electron
+|`npm run electron:linux`| Builds your application and creates an app consumable on linux system |
+|`npm run electron:windows`| On a Windows OS, builds your application and creates an app consumable in windows 32/64 bit systems |
+|`npm run electron:mac`|  On a MAC OS, builds your application and generates a `.app` file of your application that can be run on Mac |
 
-This template is set up to use SASS for styling. All classes used are based on the {N} core theme – consult the [documentation](https://docs.nativescript.org/angular/ui/theme.html#theme) to understand how to customize it. Check it out to see what classes you can use on which component.
+**Your application is optimised. Only /dist folder and node dependencies are included in the executable.**
 
-It has 4 global style files that are located at the root of the app folder:
+## You want to use a specific lib (like rxjs) in electron main thread ?
 
-- `_app-variables.scss` - holds the global SASS variables that are imported on each component's styles.
-- `_app-common.scss` - the global common style sheet. These style rules are applied to both Android and iOS.
-- `app.android.scss` - the global Android style sheet. These style rules are applied to Android only.
-- `app.ios.scss` - the global iOS style sheet. These style rules are applied to iOS only.
+You can to this! Just by importing your library in npm dependencies (not devDependencies) with `npm install --save`. It will be loaded by electron during build phase and added to the final package. Then use your library by importing it in `main.ts` file. Easy no ?
 
-## Get Help
+## Browser mode
 
-The NativeScript framework has a vibrant community that can help when you run into problems.
+Maybe you want to execute the application in the browser with hot reload ? You can do it with `npm run ng:serve:web`.  
+Note that you can't use Electron or NodeJS native libraries in this case. Please check `providers/electron.service.ts` to watch how conditional import of electron/Native libraries is done.
 
-Try [joining the NativeScript community Slack](http://developer.telerik.com/wp-login.php?action=slack-invitation). The Slack channel is a great place to get help troubleshooting problems, as well as connect with other NativeScript developers.
+## Branch & Packages version
 
-If you have found an issue with this template, please report the problem in the [NativeScript repository](https://github.com/NativeScript/NativeScript/issues).
+- Angular 4 & Electron 1 : Branch [angular4](https://github.com/maximegris/angular-electron/tree/angular4)
+- Angular 5 & Electron 1 : Branch [angular5](https://github.com/maximegris/angular-electron/tree/angular5)
+- Angular 6 & Electron 2 : (master)
 
-## Contributing
-
-We love PRs, and accept them gladly. Feel free to propose changes and new ideas. We will review and discuss, so that they can be accepted and better integrated.
+[build-badge]: https://travis-ci.org/maximegris/angular-electron.svg?branch=master
+[build]: https://travis-ci.org/maximegris/angular-electron.svg?branch=master
+[dependencyci-badge]: https://dependencyci.com/github/maximegris/angular-electron/badge
+[dependencyci]: https://dependencyci.com/github/maximegris/angular-electron
+[license-badge]: https://img.shields.io/badge/license-Apache2-blue.svg?style=flat
+[license]: https://github.com/maximegris/angular-electron/blob/master/LICENSE.md
+[prs-badge]: https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat-square
+[prs]: http://makeapullrequest.com
+[github-watch-badge]: https://img.shields.io/github/watchers/maximegris/angular-electron.svg?style=social
+[github-watch]: https://github.com/maximegris/angular-electron/watchers
+[github-star-badge]: https://img.shields.io/github/stars/maximegris/angular-electron.svg?style=social
+[github-star]: https://github.com/maximegris/angular-electron/stargazers
+[twitter]: https://twitter.com/intent/tweet?text=Check%20out%20angular-electron!%20https://github.com/maximegris/angular-electron%20%F0%9F%91%8D
+[twitter-badge]: https://img.shields.io/twitter/url/https/github.com/maximegris/angular-electron.svg?style=social

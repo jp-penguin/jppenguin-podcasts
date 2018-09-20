@@ -1,34 +1,49 @@
-# NativeScript
-hooks/
-node_modules/
-platforms/
+# See http://help.github.com/ignore-files/ for more about ignoring files.
 
-# NativeScript Template
+# compiled output
+/dist
+/tmp
+/out-tsc
+/app-builds
+/release
+main.js
+src/**/*.js
 *.js.map
-*.js
-!webpack.config.js
-*.css
 
-# Logs
-logs
-*.log
-npm-debug.log*
-yarn-debug.log*
-yarn-error.log*
+# dependencies
+/node_modules
 
-# General
-.DS_Store
-.AppleDouble
-.LSOverride
-.idea
-.cloud
+# IDEs and editors
+/.idea
 .project
-tmp/
-typings/
+.classpath
+.c9/
+*.launch
+.settings/
+*.sublime-workspace
 
-# Visual Studio Code
+# IDE - VSCode
 .vscode/*
 !.vscode/settings.json
 !.vscode/tasks.json
 !.vscode/launch.json
 !.vscode/extensions.json
+
+# misc
+/.sass-cache
+/connect.lock
+/coverage
+/libpeerconnection.log
+npm-debug.log
+testem.log
+/typings
+package-lock.json
+
+# e2e
+/e2e/*.js
+!/e2e/protractor.conf.js
+/e2e/*.map
+
+# System Files
+.DS_Store
+Thumbs.db
