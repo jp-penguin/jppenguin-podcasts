@@ -1,0 +1,36 @@
+#btnTest {
+    width: 300;
+    height: 200;
+}
+
+Button,
+TextField {
+    margin-bottom: 10;
+}
+
+.btn-primary {
+    background-color: #CB1D00;
+    margin-left: 0;
+    margin-right: 0;
+}
+
+TextField {
+    placeholder-color: #C4AFB4;
+    color: black;
+}
+
+.podcast-list-image {
+    width: 100;
+    height: 100;
+    background: green;
+}
+
+.podcast-list-info {
+    height: 100;
+    width: 100%;
+    background: black;
+}
+
+.podcast {
+    height: 100;
+}
