@@ -28,6 +28,9 @@ import { PodcastComponent } from './components/podcast/podcast.component';
 import { SettingsComponent } from './components/settings/settings.component';
 import { PlaylistComponent } from './components/playlist/playlist.component';
 import { UiService } from './services/ui.service';
+import { UnplayedComponent } from './components/unplayed/unplayed.component';
+import { DownloadedComponent } from './components/downloaded/downloaded.component';
+import { PlayerComponent } from './components/player/player.component';
 
 // AoT requires an exported function for factories
 export function HttpLoaderFactory(http: HttpClient) {
@@ -45,7 +48,10 @@ export function HttpLoaderFactory(http: HttpClient) {
     StoreComponent,
     PodcastComponent,
     SettingsComponent,
-    PlaylistComponent
+    PlaylistComponent,
+    UnplayedComponent,
+    DownloadedComponent,
+    PlayerComponent
   ],
   imports: [
     BrowserModule,

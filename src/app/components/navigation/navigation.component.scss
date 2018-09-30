@@ -1,6 +1,19 @@
+$navWidth: 150px;
+
 button {
   width: 150px;
   text-align: justify
 }
 
-hr {}
+.navigation-page {
+  width: $navWidth;
+
+  div {
+    width: inherit;
+
+  }
+
+  input {
+    width: $navWidth - 10px;
+  }
+}

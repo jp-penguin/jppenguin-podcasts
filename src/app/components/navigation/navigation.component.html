@@ -1,11 +1,19 @@
-<div class="nav-top-grid nav-text" [ngStyle]="{'visibility': uiService.navigationOpen ? 'visible' : 'hidden'}">
-  <!-- <div></div> -->
-  <div></div>
-  <button id='searchButton' (click)="uiService.searchOpenClick();">Search</button>
-  <button id='libraryButton' (click)="uiService.libraryOpenClick();">Library</button>
-  <button id='playlistButton' (click)="uiService.playlistOpenClick();">Playlist</button>
-  <button id='unplayedButton' (click)="uiService.unplayedOpenClick();">Unplayed</button>
-  <button id='downloadedButton' (click)="uiService.downloadedOpenClick();">Downloaded</button>
-  <button id='nowPlayingButton' (click)="uiService.nowPlayingOpenClick();">Now Playing</button>
-  <hr>
+<div class='navigation navigation-page'>
+
+  <div class="nav-top-grid nav-text" [ngStyle]="{'visibility': uiService.navigationOpen ? 'visible' : 'hidden'}">
+    <div></div>
+    <!-- <div>asdf</div> -->
+    <!-- <button id='searchButton' (click)="uiService.searchButtonClick();">Search</button> -->
+    <div id="searchHolder">
+
+      <input type="search">
+    </div>
+    <button id='libraryButton' (click)="uiService.libraryButtonClick();">Library</button>
+    <button id='playlistButton' (click)="uiService.playlistButtonClick();">Playlist</button>
+    <button id='unplayedButton' (click)="uiService.unplayedButtonClick();">Unplayed</button>
+    <button id='downloadedButton' (click)="uiService.downloadedButtonClick();">Downloaded</button>
+    <button id='nowPlayingButton' (click)="uiService.playerButtonClick();">Now Playing</button>
+    <hr>
+  </div>
+
 </div>

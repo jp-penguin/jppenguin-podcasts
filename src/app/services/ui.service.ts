@@ -1,31 +1,34 @@
 import { Injectable } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Injectable({
   providedIn: 'root'
 })
 export class UiService {
   public navigationOpen = true;
-  constructor() {}
+  constructor(private router: Router) {}
 
-  public navigatoinOpenClick() {
+  public navigatoinButtonClick() {
     this.navigationOpen = !this.navigationOpen;
   }
-  public searchOpenClick() {
+  public searchButtonClick() {
     this.navigationOpen = true;
+
+    // this.router.navigateByUrl('search');
   }
-  public libraryOpenClick() {
-    this.navigationOpen = true;
+  public libraryButtonClick() {
+    this.router.navigateByUrl('podcasts');
   }
-  public playlistOpenClick() {
-    this.navigationOpen = true;
+  public playlistButtonClick() {
+    this.router.navigateByUrl('playlist');
   }
-  public unplayedOpenClick() {
-    this.navigationOpen = true;
+  public unplayedButtonClick() {
+    this.router.navigateByUrl('unplayed');
   }
-  public downloadedOpenClick() {
-    this.navigationOpen = true;
+  public downloadedButtonClick() {
+    this.router.navigateByUrl('downloaded');
   }
-  public nowPlayingOpenClick() {
-    this.navigationOpen = true;
+  public playerButtonClick() {
+    this.router.navigateByUrl('player');
   }
 }

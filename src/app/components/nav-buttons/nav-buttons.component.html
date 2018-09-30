@@ -1,11 +1,15 @@
-<div class="nav-top-grid">
-  <!-- <div></div> -->
-  <button id='navButton' (click)="uiService.navigatoinOpenClick();" class="fas fa-bars"></button>
-  <button id='searchButton' (click)="uiService.searchOpenClick();" class="fas fa-search"></button>
-  <button id='libraryButton' (click)="uiService.libraryOpenClick();" class="fas fa-podcast"></button>
-  <button id='playlistButton' (click)="uiService.playlistOpenClick();" class="fas fa-bars"></button>
-  <button id='unplayedButton' (click)="uiService.unplayedOpenClick();" class="fas fa-microphone"></button>
-  <button id='downloadedButton' (click)="uiService.downloadedOpenClick();" class="fas fa-download"></button>
-  <button id='nowPlayingButton' (click)="uiService.nowPlayingOpenClick();" class="fas fa-headphones"></button>
-  <hr>
+<div class='navigation'>
+
+  <div class="nav-top-grid">
+    <!-- <div></div> -->
+    <button id='navButton' (click)="uiService.navigatoinButtonClick();" class="fas fa-bars"></button>
+    <button id='searchButton' (click)="uiService.searchButtonClick();" class="fas fa-search"></button>
+    <button id='libraryButton' (click)="uiService.libraryButtonClick();" class="fas fa-podcast"></button>
+    <button id='playlistButton' (click)="uiService.playlistButtonClick();" class="fas fa-bars"></button>
+    <button id='unplayedButton' (click)="uiService.unplayedButtonClick();" class="fas fa-microphone"></button>
+    <button id='downloadedButton' (click)="uiService.downloadedButtonClick();" class="fas fa-download"></button>
+    <button id='nowPlayingButton' (click)="uiService.playerButtonClick();" class="fas fa-headphones"></button>
+    <hr>
+  </div>
+
 </div>

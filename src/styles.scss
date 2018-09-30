@@ -5,15 +5,25 @@ body {
   padding: 0;
 
   height: 100%;
-  background-color: #272726;
+
 }
 
+.navigation {
+
+  background-color: #272726;
+  height: 100%;
+}
 
 .nav-top-grid {
   position: fixed;
   top: 48px;
   display: grid;
   grid-template-rows: repeat(auto-fill, 48px);
+
+  hr {
+    width: 100%;
+    border-width: .5px;
+  }
 }
 
 .nav-top-grid,
@@ -24,6 +34,12 @@ body {
     border: none;
     background-color: inherit;
     color: rgb(194, 181, 181);
+  }
+
+  #searchHolder {
+    height: 48px;
+    display: flex;
+    align-items: center;
   }
 
 }
