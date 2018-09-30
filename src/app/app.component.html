@@ -1,1 +1,8 @@
-<router-outlet></router-outlet>
+<div class="main-grid" [ngClass]="{ 'main-grid-off': !uiService.navigationOpen}">
+  <app-nav-buttons></app-nav-buttons>
+  <app-navigation></app-navigation>
+  <div>
+    <router-outlet></router-outlet>
+
+  </div>
+</div>

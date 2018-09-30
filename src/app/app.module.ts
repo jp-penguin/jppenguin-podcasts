@@ -20,6 +20,14 @@ import { WebviewDirective } from './directives/webview.directive';
 import { AppComponent } from './app.component';
 import { HomeComponent } from './components/home/home.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { NavButtonsComponent } from './components/nav-buttons/nav-buttons.component';
+import { NavigationComponent } from './components/navigation/navigation.component';
+import { PodcastsComponent } from './components/podcasts/podcasts.component';
+import { StoreComponent } from './components/store/store.component';
+import { PodcastComponent } from './components/podcast/podcast.component';
+import { SettingsComponent } from './components/settings/settings.component';
+import { PlaylistComponent } from './components/playlist/playlist.component';
+import { UiService } from './services/ui.service';
 
 // AoT requires an exported function for factories
 export function HttpLoaderFactory(http: HttpClient) {
@@ -27,7 +35,18 @@ export function HttpLoaderFactory(http: HttpClient) {
 }
 
 @NgModule({
-  declarations: [AppComponent, HomeComponent, WebviewDirective],
+  declarations: [
+    AppComponent,
+    HomeComponent,
+    WebviewDirective,
+    NavButtonsComponent,
+    NavigationComponent,
+    PodcastsComponent,
+    StoreComponent,
+    PodcastComponent,
+    SettingsComponent,
+    PlaylistComponent
+  ],
   imports: [
     BrowserModule,
     FormsModule,
@@ -42,7 +61,7 @@ export function HttpLoaderFactory(http: HttpClient) {
       }
     })
   ],
-  providers: [ElectronService],
+  providers: [UiService, ElectronService],
   bootstrap: [AppComponent]
 })
 export class AppModule {}

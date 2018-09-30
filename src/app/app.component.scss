@@ -1,0 +1,14 @@
+.main-grid {
+  display: grid;
+  height: 100%;
+  grid-template-columns: 48px 150px auto;
+
+  &.main-grid-off {
+
+    grid-template-columns: 48px 0 auto;
+
+    .nav-text {
+      visibility: hidden;
+    }
+  }
+}
