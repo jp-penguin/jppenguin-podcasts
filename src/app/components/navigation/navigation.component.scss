@@ -1,8 +1,11 @@
 $navWidth: 273px;
+$font: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 
 button {
   width: $navWidth;
-  text-align: justify
+  text-align: justify;
+  font-size: 16px;
+  font-family: $font;
 }
 
 .navigation-page {
@@ -10,10 +13,11 @@ button {
 
   div {
     width: inherit;
-
   }
 
   input {
     width: $navWidth - 10px;
+    height: 32px;
+    font-family: $font;
   }
 }

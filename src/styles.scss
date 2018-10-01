@@ -1,15 +1,14 @@
 /* You can add global styles to this file, and also import other style files */
+
 html,
 body {
   margin: 0;
   padding: 0;
 
   height: 100%;
-
 }
 
 .navigation {
-
   background-color: rgba(0, 99, 177, 1);
   height: 100%;
 }
@@ -21,7 +20,6 @@ body {
   grid-template-rows: repeat(auto-fill, 48px);
 
   hr {
-
     border-width: 0.2px;
   }
 }
@@ -33,7 +31,6 @@ body {
   grid-template-rows: repeat(auto-fill, 48px);
 
   hr {
-
     border-width: 0 0 0.2px 0;
   }
 
@@ -65,5 +62,4 @@ body {
     display: flex;
     align-items: center;
   }
-
 }
