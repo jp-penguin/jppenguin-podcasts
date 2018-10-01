@@ -280,6 +280,10 @@
   version "2.53.43"
   resolved "https://registry.yarnpkg.com/@types/selenium-webdriver/-/selenium-webdriver-2.53.43.tgz#2de3d718819bc20165754c4a59afb7e9833f6707"
 
+"@types/underscore@^1.8.9":
+  version "1.8.9"
+  resolved "https://registry.yarnpkg.com/@types/underscore/-/underscore-1.8.9.tgz#fef41f800cd23db1b4f262ddefe49cd952d82323"
+
 "@webassemblyjs/ast@1.4.3":
   version "1.4.3"
   resolved "https://registry.yarnpkg.com/@webassemblyjs/ast/-/ast-1.4.3.tgz#3b3f6fced944d8660273347533e6d4d315b5934a"
@@ -1830,6 +1834,13 @@ core-util-is@1.0.2, core-util-is@~1.0.0:
   version "1.0.2"
   resolved "https://registry.yarnpkg.com/core-util-is/-/core-util-is-1.0.2.tgz#b5fd54220aa2bc5ab57aab7140c940754503c1a7"
 
+cors-anywhere@^0.4.1:
+  version "0.4.1"
+  resolved "https://registry.yarnpkg.com/cors-anywhere/-/cors-anywhere-0.4.1.tgz#95573a53516cd90c1ebb05e2f5dc48a735d970e8"
+  dependencies:
+    http-proxy "1.11.1"
+    proxy-from-env "0.0.1"
+
 cosmiconfig@^4.0.0:
   version "4.0.0"
   resolved "https://registry.yarnpkg.com/cosmiconfig/-/cosmiconfig-4.0.0.tgz#760391549580bbd2df1e562bc177b13c290972dc"
@@ -2643,6 +2654,10 @@ event-stream@~3.3.0:
     split "^1.0.1"
     stream-combiner "^0.2.2"
     through "^2.3.8"
+
+eventemitter3@1.x.x:
+  version "1.2.0"
+  resolved "https://registry.yarnpkg.com/eventemitter3/-/eventemitter3-1.2.0.tgz#1c86991d816ad1e504750e73874224ecf3bec508"
 
 eventemitter3@^3.0.0:
   version "3.1.0"
@@ -3617,6 +3632,13 @@ http-proxy-middleware@~0.18.0:
     is-glob "^4.0.0"
     lodash "^4.17.5"
     micromatch "^3.1.9"
+
+http-proxy@1.11.1:
+  version "1.11.1"
+  resolved "https://registry.yarnpkg.com/http-proxy/-/http-proxy-1.11.1.tgz#71df55757e802d58ea810df2244019dda05ae85d"
+  dependencies:
+    eventemitter3 "1.x.x"
+    requires-port "0.x.x"
 
 http-proxy@^1.13.0, http-proxy@^1.16.2:
   version "1.17.0"
@@ -6246,6 +6268,10 @@ proxy-agent@~3.0.0:
     proxy-from-env "^1.0.0"
     socks-proxy-agent "^4.0.1"
 
+proxy-from-env@0.0.1:
+  version "0.0.1"
+  resolved "https://registry.yarnpkg.com/proxy-from-env/-/proxy-from-env-0.0.1.tgz#b27c4946e9e6d5dbadb7598a6435d3014c4cfd49"
+
 proxy-from-env@^1.0.0:
   version "1.0.0"
   resolved "https://registry.yarnpkg.com/proxy-from-env/-/proxy-from-env-1.0.0.tgz#33c50398f70ea7eb96d21f7b817630a55791c7ee"
@@ -6793,6 +6819,10 @@ require-from-string@^2.0.1:
 require-main-filename@^1.0.1:
   version "1.0.1"
   resolved "https://registry.yarnpkg.com/require-main-filename/-/require-main-filename-1.0.1.tgz#97f717b69d48784f5f526a6c5aa8ffdda055a4d1"
+
+requires-port@0.x.x:
+  version "0.0.1"
+  resolved "https://registry.yarnpkg.com/requires-port/-/requires-port-0.0.1.tgz#4b4414411d9df7c855995dd899a8c78a2951c16d"
 
 requires-port@^1.0.0:
   version "1.0.0"
@@ -8031,6 +8061,10 @@ umask@~1.1.0:
   version "1.1.0"
   resolved "https://registry.yarnpkg.com/umask/-/umask-1.1.0.tgz#f29cebf01df517912bb58ff9c4e50fde8e33320d"
 
+underscore@^1.9.1:
+  version "1.9.1"
+  resolved "https://registry.yarnpkg.com/underscore/-/underscore-1.9.1.tgz#06dce34a0e68a7babc29b365b8e74b8925203961"
+
 underscore@~1.7.0:
   version "1.7.0"
   resolved "https://registry.yarnpkg.com/underscore/-/underscore-1.7.0.tgz#6bbaf0877500d36be34ecaa584e0db9fef035209"
@@ -8590,7 +8624,7 @@ xml2js@0.4.4:
     sax "0.6.x"
     xmlbuilder ">=1.0.0"
 
-xml2js@^0.4.17:
+xml2js@^0.4.17, xml2js@^0.4.19:
   version "0.4.19"
   resolved "https://registry.yarnpkg.com/xml2js/-/xml2js-0.4.19.tgz#686c20f213209e94abf0d1bcf1efaa291c7827a7"
   dependencies:
