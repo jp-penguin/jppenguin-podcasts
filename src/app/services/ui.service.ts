@@ -29,6 +29,16 @@ export class UiService {
   public downloadedButtonClick() {
     this.router.navigateByUrl('downloaded');
   }
+  public settingsButtonClick() {
+    this.router.navigateByUrl('settings');
+  }
+
+  public refreshButtonClick() {
+    // this.router.navigateByUrl('refreshButtonClick');
+  }
+  public storeButtonClick() {
+    this.router.navigateByUrl('store');
+  }
   public playerButtonClick() {
     this.router.navigateByUrl('player');
     this.httpClient

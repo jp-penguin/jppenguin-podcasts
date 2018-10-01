@@ -16,7 +16,10 @@ function createWindow() {
     y: 0,
     width: size.width,
     height: size.height,
-    webPreferences: { webSecurity: false }
+    webPreferences: { webSecurity: false },
+    minHeight: 600,
+    minWidth: 550,
+    title: 'jppenguin-podcasts'
   });
 
   if (serve) {

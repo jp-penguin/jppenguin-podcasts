@@ -10,7 +10,7 @@ body {
 
 .navigation {
 
-  background-color: #272726;
+  background-color: rgba(0, 99, 177, 1);
   height: 100%;
 }
 
@@ -21,9 +21,27 @@ body {
   grid-template-rows: repeat(auto-fill, 48px);
 
   hr {
-    width: 100%;
-    border-width: .5px;
+
+    border-width: 0.2px;
   }
+}
+
+.nav-bottom-grid {
+  position: fixed;
+  bottom: 0px;
+  display: grid;
+  grid-template-rows: repeat(auto-fill, 48px);
+
+  hr {
+
+    border-width: 0 0 0.2px 0;
+  }
+
+  // hr {
+  //   width: 100%;
+  //   border-width: 0.2px;
+  //   color: lightgrey;
+  // }
 }
 
 .nav-top-grid,
@@ -33,7 +51,13 @@ body {
     width: 48px;
     border: none;
     background-color: inherit;
-    color: rgb(194, 181, 181);
+    color: rgb(255, 255, 255);
+  }
+
+  hr {
+    width: 100%;
+    // border-width: 0 0 0.2px 0;
+    color: lightgrey;
   }
 
   #searchHolder {
