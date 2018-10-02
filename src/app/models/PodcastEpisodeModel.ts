@@ -14,22 +14,26 @@ export class PodcastEpisodeModel {
   public played = false;
 
   constructor(item: Element) {
-    this.author = item.querySelector('author').innerHTML;
-    this.title = item.querySelector('title').innerHTML;
-    this.subtitle = item.querySelector('subtitle').innerHTML;
-    this.summary = item.querySelector('summary').innerHTML;
+    this.author = (item.querySelector('author') as HTMLElement).innerText;
+    this.title = (item.querySelector('title') as HTMLElement).innerText;
+    this.subtitle = (item.querySelector('subtitle') as HTMLElement).innerText;
+    this.summary = (item.querySelector('summary') as HTMLElement).innerText;
 
-    // this.episode = item.querySelector('episode').innerHTML;
+    // this.episode = (item.querySelector('episode') as HTMLElement).innerText;
 
     // console.log('Title episode ' + item.querySelector('episode'));
 
-    this.episodeType = item.querySelector('episodeType').innerHTML;
+    this.episodeType = (item.querySelector(
+      'episodeType'
+    ) as HTMLElement).innerText;
     this.url = item
       .querySelector('enclosure')
       .attributes.getNamedItem('url').textContent;
 
-    this.description = item.querySelector('description').innerHTML;
-    this.guid = item.querySelector('guid').innerHTML;
+    this.description = (item.querySelector(
+      'description'
+    ) as HTMLElement).innerText;
+    this.guid = (item.querySelector('guid') as HTMLElement).innerText;
   }
 }
 

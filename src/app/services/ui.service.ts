@@ -3,6 +3,7 @@ import { Router } from '@angular/router';
 import { HttpClient } from '@angular/common/http';
 import { PodcastModel } from '../models/PodcastModel';
 import { SaveStateService } from './save-state.service';
+import * as _ from 'underscore';
 
 @Injectable({
   providedIn: 'root'
@@ -41,7 +42,7 @@ export class UiService {
 
   public refreshButtonClick() {
     this.httpClient
-      .get('assets/podcast.xml', {
+      .get('https://cors.parkinson.im/http://feeds.twit.tv/ww.xml', {
         responseType: 'text',
         observe: 'body'
       })
@@ -51,13 +52,10 @@ export class UiService {
         const doc = parser.parseFromString(data, 'text/xml');
         // console.log(doc.querySelector('channel'));
 
-        const podcast = new PodcastModel(
-          doc,
-          'https://skeptoid.com/podcast.xml'
-        );
+        const podcast = new PodcastModel(doc, 'http://feeds.twit.tv/ww.xmll');
 
         this.saveState.addPodcast(podcast);
-        console.log(this.saveState.podcasts);
+        // console.log(this.saveState.podcasts);
 
         // console.log(podcast);
       });
