@@ -4,11 +4,14 @@
   grid-template-columns: 48px 273px auto;
 
   &.main-grid-off {
-
     grid-template-columns: 48px 0 auto;
 
     // .nav-text {
     //   visibility: hidden;
     // }
+  }
+
+  .router {
+    overflow: scroll;
   }
 }

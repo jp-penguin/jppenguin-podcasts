@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { SaveStateService } from '../../services/save-state.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-podcasts',
@@ -7,9 +9,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PodcastsComponent implements OnInit {
 
-  constructor() { }
+  constructor(public saveState: SaveStateService, private router: Router) { }
 
   ngOnInit() {
+
+  }
+
+  podcastClick(id: string) {
+    this.router.navigateByUrl('podcasts/' + id);
   }
 
 }

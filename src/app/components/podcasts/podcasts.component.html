@@ -1,3 +1,6 @@
-<p>
-  podcasts works!
-</p>
+<div class="podcasts">
+  <div class="podcast" *ngFor="let podcast of this.saveState.podcasts" (click)="podcastClick(podcast.id)">
+    <img src="{{podcast.imageUrl}}" alt="">
+    {{podcast.title}}
+  </div>
+</div>

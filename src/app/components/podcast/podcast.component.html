@@ -1,3 +1,7 @@
-<p>
-  podcast works!
-</p>
+<div class="podcast-episodes">
+  <div class="podcast-episode" *ngFor="let podcastEpisode of this.podcast.podcastEpisodes">
+    <span>{{podcastEpisode.title}}</span>
+    <span>{{podcast.title}}</span>
+
+  </div>
+</div>

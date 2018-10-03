@@ -14,10 +14,10 @@ export class PodcastEpisodeModel {
   public played = false;
 
   constructor(item: Element) {
-    this.author = (item.querySelector('author') as HTMLElement).innerText;
-    this.title = (item.querySelector('title') as HTMLElement).innerText;
-    this.subtitle = (item.querySelector('subtitle') as HTMLElement).innerText;
-    this.summary = (item.querySelector('summary') as HTMLElement).innerText;
+    this.author = (item.querySelector('author') as HTMLElement).innerHTML;
+    this.title = (item.querySelector('title') as HTMLElement).innerHTML;
+    this.subtitle = (item.querySelector('subtitle') as HTMLElement).innerHTML;
+    this.summary = (item.querySelector('summary') as HTMLElement).innerHTML;
 
     // this.episode = (item.querySelector('episode') as HTMLElement).innerText;
 

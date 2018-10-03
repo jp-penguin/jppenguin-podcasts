@@ -18,6 +18,7 @@ export class PodcastModel {
   public category: string;
   public keywords: string[] = [];
   public podcastEpisodes: PodcastEpisodeModel[] = [];
+  public id: string;
   // constructor(
   //   podcastEpisodes: PodcastEpisodeModel[],
   //   title: string,
@@ -65,8 +66,17 @@ export class PodcastModel {
     // this.keywords = doc.querySelector('channel keywords').innerHTML;
     // console.log(this.title);
     this.url = url;
-  }
+    this.id = _.uniqueId();
 
+    console.log(this.CreateGuid());
+  }
+  CreateGuid() {
+    return this._p8(true) + this._p8(true) + this._p8(true) + this._p8(false);
+  }
+  _p8(s: boolean): string {
+    let p = (Math.random().toString(16) + '000000000').substr(2, 8);
+    return s ? p.substr(0, 4) + p.substr(4, 4) : p;
+  }
   private printClass() {
     console.log('this.description ' + this.description);
     console.log('this.imageUrl ' + this.imageUrl);
@@ -76,74 +86,6 @@ export class PodcastModel {
     console.log('this.explicit ' + this.explicit);
     console.log('this.type ' + this.type);
   }
-
-  // constructor(channel: any) {
-  //   this.imageUrl = channel.IMAGE[0].URL[0];
-  //   this.image = new Image(
-  //     channel.IMAGE[0].URL,
-  //     channel.IMAGE[0].TITLE,
-  //     channel.IMAGE[0].LINK
-  //   );
-  //   this.title = channel.TITLE[0];
-
-  //   this.description = channel.DESCRIPTION[0];
-  //   this.url = this.setFeedUrl(channel);
-
-  //   // console.log(channel['ATOM:LINK'][0].$.HREF);
-
-  //   // this.lastUpdated = new Date(channel.PUBDATE[0]);
-  //   // const items = channel.ITEM;
-
-  //   this.subtitle = this.setType(channel, ['ITUNES:SUBTITLE']); // channel['ITUNES:SUBTITLE'][0];
-  //   this.author = this.setType(channel, ['ITUNES:AUTHOR']); // channel['ITUNES:AUTHOR'][0];
-
-  //   this.summary = this.setType(channel, ['ITUNES:SUMMARY']); // channel['ITUNES:SUMMARY'][0];
-  //   this.explicit = this.setType(channel, ['ITUNES:EXPLICIT']); // channel['ITUNES:EXPLICIT'];
-
-  //   this.type = this.setType(channel, ['ITUNES:TYPE']); // channel['ITUNES:TYPE'][0];
-
-  //   this.setType(channel, ['ITUNES:KEYWORDS'])
-  //     .split(',')
-  //     .forEach(keyword => {
-  //       this.keywords.push(new Keyword(keyword));
-  //     });
-  //   this.category = this.setType(channel, ['ITUNES:CATEGORY']); // channel['ITUNES:CATEGORY'][0];
-  //   // for (let x = 0; x < channel.ITEM.length; x++) {
-  //   //   const element = channel.ITEM[x];
-  //   //   console.log(element);
-  //   // }
-  //   for (const item of channel.ITEM) {
-  //     // console.log('item ' + item);
-
-  //     this.podcastEpisodes.push(new PodcastEpisodeModel(item));
-  //   }
-  //   this.failingTest();
-  // }
-
-  // private failingTest() {
-  //   if (this.title.indexOf('San Francisco Chronicle Food') !== -1) {
-  //     console.log(this.title);
-  //   }
-  // }
-
-  // private setFeedUrl(channel: any): string {
-  //   if (channel['ATOM:LINK'] !== undefined) {
-  //     return channel['ATOM:LINK'][0].$.HREF;
-  //   }
-  //   return '';
-  // }
-
-  // private setType(channel: any, tags: string[]): string {
-  //   return this.setBasicTag(channel, tags);
-  // }
-  // private setBasicTag(channel: any, tags: string[]): string {
-  //   tags.forEach(tag => {
-  //     if (channel[tag] !== undefined) {
-  //       return channel[tag][0];
-  //     }
-  //   });
-  //   return '';
-  // }
 }
 
 export class Image {

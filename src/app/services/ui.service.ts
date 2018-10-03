@@ -10,6 +10,93 @@ import * as _ from 'underscore';
 })
 export class UiService {
   public navigationOpen = true;
+  private urls = [
+    'http://feeds.twit.tv/brickhouse.xml',
+    'http://feeds.twit.tv/brickhouse_video_small.xml',
+    'http://feeds.twit.tv/brickhouse_video_large.xml',
+    'http://feeds.twit.tv/brickhouse_video_hd.xml',
+    'http://feeds.twit.tv/aaa.xml',
+    'http://feeds.twit.tv/aaa_video_small.xml',
+    'http://feeds.twit.tv/aaa_video_large.xml',
+    'http://feeds.twit.tv/aaa_video_hd.xml',
+    'http://feeds.twit.tv/floss.xml',
+    'http://feeds.twit.tv/floss_video_small.xml',
+    'http://feeds.twit.tv/floss_video_large.xml',
+    'http://feeds.twit.tv/floss_video_hd.xml',
+    'http://feeds.twit.tv/hn.xml',
+    'http://feeds.twit.tv/hn_video_small.xml',
+    'http://feeds.twit.tv/hn_video_large.xml',
+    'http://feeds.twit.tv/hn_video_hd.xml',
+    'http://feeds.twit.tv/ipad.xml',
+    'http://feeds.twit.tv/ipad_video_small.xml',
+    'http://feeds.twit.tv/ipad_video_large.xml',
+    'http://feeds.twit.tv/ipad_video_hd.xml',
+    'http://feeds.twit.tv/kh.xml',
+    'http://feeds.twit.tv/kh_video_small.xml',
+    'http://feeds.twit.tv/kh_video_large.xml',
+    'http://feeds.twit.tv/kh_video_hd.xml',
+    'http://feeds.twit.tv/mbw.xml',
+    'http://feeds.twit.tv/mbw_video_small.xml',
+    'http://feeds.twit.tv/mbw_video_large.xml',
+    'http://feeds.twit.tv/mbw_video_hd.xml',
+    'http://feeds.twit.tv/tnss.xml',
+    'http://feeds.twit.tv/tnss_video_small.xml',
+    'http://feeds.twit.tv/tnss_video_large.xml',
+    'http://feeds.twit.tv/tnss_video_hd.xml',
+    'http://feeds.twit.tv/sn.xml',
+    'http://feeds.twit.tv/sn_video_small.xml',
+    'http://feeds.twit.tv/sn_video_large.xml',
+    'http://feeds.twit.tv/sn_video_hd.xml',
+    'http://feeds.twit.tv/kfi.xml',
+    'http://feeds.twit.tv/ttg_video_small.xml',
+    'http://feeds.twit.tv/ttg_video_large.xml',
+    'http://feeds.twit.tv/ttg_video_hd.xml',
+    'http://feeds.twit.tv/tnw.xml',
+    'http://feeds.twit.tv/tnw_video_small.xml',
+    'http://feeds.twit.tv/tnw_video_large.xml',
+    'http://feeds.twit.tv/tnw_video_hd.xml',
+    'http://feeds.twit.tv/twich.xml',
+    'http://feeds.twit.tv/twich_video_small.xml',
+    'http://feeds.twit.tv/twich_video_large.xml',
+    'http://feeds.twit.tv/twich_video_hd.xml',
+    'http://feeds.twit.tv/twiet.xml',
+    'http://feeds.twit.tv/twiet_video_small.xml',
+    'http://feeds.twit.tv/twiet_video_large.xml',
+    'http://feeds.twit.tv/twiet_video_hd.xml',
+    'http://feeds.twit.tv/twig.xml',
+    'http://feeds.twit.tv/twig_video_small.xml',
+    'http://feeds.twit.tv/twig_video_large.xml',
+    'http://feeds.twit.tv/twig_video_hd.xml',
+    'http://feeds.twit.tv/twil.xml',
+    'http://feeds.twit.tv/twil_video_small.xml',
+    'http://feeds.twit.tv/twil_video_large.xml',
+    'http://feeds.twit.tv/twil_video_hd.xml',
+    'http://feeds.twit.tv/twit.xml',
+    'http://feeds.twit.tv/twit_video_small.xml',
+    'http://feeds.twit.tv/twit_video_large.xml',
+    'http://feeds.twit.tv/twit_video_hd.xml',
+    'http://feeds.twit.tv/tri.xml',
+    'http://feeds.twit.tv/tri_video_small.xml',
+    'http://feeds.twit.tv/tri_video_large.xml',
+    'http://feeds.twit.tv/tri_video_hd.xml',
+    'http://feeds.twit.tv/ces.xml',
+    'http://feeds.twit.tv/specials_video_small.xml',
+    'http://feeds.twit.tv/specials_video_large.xml',
+    'http://feeds.twit.tv/specials_video_hd.xml',
+    'http://feeds.twit.tv/vog.xml',
+    'http://feeds.twit.tv/ww.xml',
+    'http://feeds.twit.tv/ww_video_small.xml',
+    'http://feeds.twit.tv/ww_video_large.xml',
+    'http://feeds.twit.tv/ww_video_hd.xml',
+    'http://feeds.twit.tv/bits.xml',
+    'http://feeds.twit.tv/bits_video_small.xml',
+    'http://feeds.twit.tv/bits_video_large.xml',
+    'http://feeds.twit.tv/bits_video_hd.xml',
+    'http://feeds.twit.tv/leo.xml',
+    'http://feeds.twit.tv/leo_video_small.xml',
+    'http://feeds.twit.tv/leo_video_large.xml',
+    'http://feeds.twit.tv/leo_video_hd.xml'
+  ];
   constructor(
     private router: Router,
     private httpClient: HttpClient,
@@ -41,24 +128,27 @@ export class UiService {
   }
 
   public refreshButtonClick() {
-    this.httpClient
-      .get('https://cors.parkinson.im/http://feeds.twit.tv/ww.xml', {
-        responseType: 'text',
-        observe: 'body'
-      })
-      .subscribe(data => {
-        // console.log(data);
-        const parser = new DOMParser();
-        const doc = parser.parseFromString(data, 'text/xml');
-        // console.log(doc.querySelector('channel'));
+    _.each(this.urls, url => {
+      this.httpClient
+        .get(url, {
+          responseType: 'text',
+          observe: 'body'
+        })
+        .subscribe(data => {
+          // console.log(data);
+          const parser = new DOMParser();
+          const doc = parser.parseFromString(data, 'text/xml');
+          // console.log(doc.querySelector('channel'));
 
-        const podcast = new PodcastModel(doc, 'http://feeds.twit.tv/ww.xmll');
+          const podcast = new PodcastModel(doc, url);
 
-        this.saveState.addPodcast(podcast);
-        // console.log(this.saveState.podcasts);
+          this.saveState.addPodcast(podcast);
+          // console.log(this.saveState.podcasts);
 
-        // console.log(podcast);
-      });
+          // console.log(podcast);
+        });
+      setTimeout(() => {}, 10000);
+    });
   }
   public storeButtonClick() {
     this.router.navigateByUrl('store');
