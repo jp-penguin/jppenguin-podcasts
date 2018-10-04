@@ -13,10 +13,13 @@ export class PodcastComponent implements OnInit {
   public podcast: PodcastModel;
   constructor(
     private activatedRouter: ActivatedRoute,
-    private saveState: SaveStateService
+    private saveState: SaveStateService,
+    private router: Router
   ) {}
 
   ngOnInit() {
+    console.log(this.router.routerState);
+
     this.activatedRouter.params.subscribe(params => {
       console.log(params);
 

@@ -1,10 +1,21 @@
 .main-grid {
   display: grid;
   height: 100%;
-  grid-template-columns: 48px 273px auto;
+  grid-template-columns: 321px auto;
 
+  .nav-grid {
+    display: grid;
+    grid-template-columns: 48px 273px;
+
+    // box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  }
   &.main-grid-off {
-    grid-template-columns: 48px 0 auto;
+    grid-template-columns: 48px auto;
+
+    .nav-grid {
+      display: grid;
+      grid-template-columns: 48px 0;
+    }
 
     // .nav-text {
     //   visibility: hidden;
@@ -12,6 +23,8 @@
   }
 
   .router {
-    overflow: scroll;
+    // background-color: #0078d7;
+    overflow-y: scroll;
+    padding: 96px 0 0 48px;
   }
 }

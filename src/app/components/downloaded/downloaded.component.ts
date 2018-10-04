@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { UiService } from '../../services/ui.service';
 
 @Component({
   selector: 'app-downloaded',
@@ -6,10 +7,9 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./downloaded.component.scss']
 })
 export class DownloadedComponent implements OnInit {
-
-  constructor() { }
+  constructor(private uiService: UiService) {}
 
   ngOnInit() {
+    this.uiService.playerState = 'default';
   }
-
 }

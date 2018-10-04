@@ -10,6 +10,7 @@ import * as _ from 'underscore';
 })
 export class UiService {
   public navigationOpen = true;
+  public playerState = 'default';
   private urls = [
     'http://feeds.twit.tv/brickhouse.xml',
     'http://feeds.twit.tv/brickhouse_video_small.xml',
@@ -130,7 +131,7 @@ export class UiService {
   public refreshButtonClick() {
     _.each(this.urls, url => {
       this.httpClient
-        .get(url, {
+        .get('https://cors.parkinson.im/' + url, {
           responseType: 'text',
           observe: 'body'
         })

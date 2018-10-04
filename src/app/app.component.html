@@ -1,8 +1,15 @@
-<div class="main-grid" [ngClass]="{ 'main-grid-off': !uiService.navigationOpen}">
-  <app-nav-buttons></app-nav-buttons>
-  <app-navigation class=""></app-navigation>
-  <div class="router">
-    <router-outlet></router-outlet>
+<div class="parent-grid">
 
+  <div class="main-grid" [ngClass]="{ 'main-grid-off': !uiService.navigationOpen}">
+    <div class="nav-grid ">
+      <app-nav-buttons></app-nav-buttons>
+      <app-navigation class=""></app-navigation>
+
+    </div>
+
+    <div class="router {{uiService.playerState}}">
+      <router-outlet></router-outlet>
+    </div>
   </div>
+  <app-player></app-player>
 </div>

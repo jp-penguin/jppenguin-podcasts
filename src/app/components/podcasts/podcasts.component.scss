@@ -1,5 +1,4 @@
 .podcasts {
-  padding: 48px 0 0 48px;
   display: grid;
   grid-template-columns: repeat(auto-fit, 145px);
   grid-gap: 5px;
@@ -11,6 +10,7 @@
     width: 145px;
     text-overflow: clip;
 
+    // box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
     img {
       height: 144px;
       width: 144px;

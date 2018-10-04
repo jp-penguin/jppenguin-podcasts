@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { UiService } from '../../services/ui.service';
 
 @Component({
   selector: 'app-settings',
@@ -6,10 +7,9 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./settings.component.scss']
 })
 export class SettingsComponent implements OnInit {
-
-  constructor() { }
+  constructor(private uiService: UiService) {}
 
   ngOnInit() {
+    this.uiService.playerState = 'default';
   }
-
 }
