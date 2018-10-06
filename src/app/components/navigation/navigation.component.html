@@ -6,7 +6,7 @@
     <!-- <button id='searchButton' (click)="uiService.searchButtonClick();">Search</button> -->
     <div id="searchHolder">
 
-      <input type="search">
+      <input id="searchBox" type="search" (keyup)="searchKeyPress($event)">
     </div>
     <button id='libraryButton' (click)="uiService.libraryButtonClick();">Library</button>
     <button id='playlistButton' (click)="uiService.playlistButtonClick();">Playlist</button>

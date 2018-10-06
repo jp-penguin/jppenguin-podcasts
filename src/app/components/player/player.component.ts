@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { UiService } from '../../services/ui.service';
+import { PlayerService } from '../../services/player.service';
 
 @Component({
   selector: 'app-player',
@@ -7,7 +8,10 @@ import { UiService } from '../../services/ui.service';
   styleUrls: ['./player.component.scss']
 })
 export class PlayerComponent implements OnInit {
-  constructor(private uiService: UiService) {}
+  constructor(
+    private uiService: UiService,
+    private playerService: PlayerService
+  ) {}
 
   ngOnInit() {}
 }

@@ -2,7 +2,10 @@ import { Component, OnInit } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
 import { SaveStateService } from '../../services/save-state.service';
 import * as _ from 'underscore';
+import * as lodash from 'lodash';
 import { PodcastModel } from '../../models/PodcastModel';
+import { PodcastEpisodeModel } from '../../models/PodcastEpisodeModel';
+import { PlayerService } from '../../services/player.service';
 
 @Component({
   selector: 'app-podcast',
@@ -14,7 +17,8 @@ export class PodcastComponent implements OnInit {
   constructor(
     private activatedRouter: ActivatedRoute,
     private saveState: SaveStateService,
-    private router: Router
+    private router: Router,
+    private playerService: PlayerService
   ) {}
 
   ngOnInit() {
@@ -23,10 +27,15 @@ export class PodcastComponent implements OnInit {
     this.activatedRouter.params.subscribe(params => {
       console.log(params);
 
-      this.podcast = _.find(this.saveState.podcasts, podcast => {
+      this.podcast = lodash.find(this.saveState.podcasts, podcast => {
         return podcast.id === params['id'];
       });
       console.log(this.podcast);
     });
+  }
+
+  playEpisodeClick(podcastEpisode: PodcastEpisodeModel) {
+    console.log(podcastEpisode.title);
+    this.playerService.play(podcastEpisode);
   }
 }

@@ -4,6 +4,7 @@ import { HttpClient } from '@angular/common/http';
 import { PodcastModel } from '../models/PodcastModel';
 import { SaveStateService } from './save-state.service';
 import * as _ from 'underscore';
+import * as lodash from 'lodash';
 
 @Injectable({
   providedIn: 'root'
@@ -129,27 +130,30 @@ export class UiService {
   }
 
   public refreshButtonClick() {
-    _.each(this.urls, url => {
-      this.httpClient
-        .get('https://cors.parkinson.im/' + url, {
-          responseType: 'text',
-          observe: 'body'
-        })
-        .subscribe(data => {
-          // console.log(data);
-          const parser = new DOMParser();
-          const doc = parser.parseFromString(data, 'text/xml');
-          // console.log(doc.querySelector('channel'));
-
-          const podcast = new PodcastModel(doc, url);
-
-          this.saveState.addPodcast(podcast);
-          // console.log(this.saveState.podcasts);
-
-          // console.log(podcast);
-        });
-      setTimeout(() => {}, 10000);
+    lodash.each(this.urls, url => {
+      this.getPodcast(url);
     });
+  }
+
+  public getPodcast(url: string) {
+    this.httpClient
+      .get('https://cors.parkinson.im/' + url, {
+        responseType: 'text',
+        observe: 'body'
+      })
+      .subscribe(data => {
+        // console.log(data);
+        const parser = new DOMParser();
+        const doc = parser.parseFromString(data, 'text/xml');
+        // console.log(doc.querySelector('channel'));
+
+        const podcast = new PodcastModel(doc, url);
+
+        this.saveState.addPodcast(podcast);
+        // console.log(this.saveState.podcasts);
+
+        // console.log(podcast);
+      });
   }
   public storeButtonClick() {
     this.router.navigateByUrl('store');

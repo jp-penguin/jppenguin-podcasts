@@ -12,6 +12,9 @@ export class PodcastEpisodeModel {
   public pubDate: Date;
   public keywords: Keyword[] = [];
   public played = false;
+  public playing = false;
+  public currentTime = 0;
+  public duration = 0;
 
   constructor(item: Element) {
     this.author = (item.querySelector('author') as HTMLElement).innerHTML;

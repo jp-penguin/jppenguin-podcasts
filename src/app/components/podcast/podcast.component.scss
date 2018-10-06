@@ -1,0 +1,55 @@
+$itemHeight: 64px;
+$borderWidth: 1px;
+.podcast {
+  display: grid;
+  grid-template-rows: ($itemHeight * 1.5) auto;
+  height: 100%;
+  //   background-color: #5d5a58;
+
+  .podcast-episodes {
+    display: grid;
+    grid-template-rows: repeat(auto-fill, $itemHeight);
+    //   overflow: scroll;
+    //   height: 100%;
+    width: 100%;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    // > div:nth-child(odd) {
+    //   background-color: #7a7574;
+    // }
+    // > div:nth-child(even) {
+    //   background-color: #4a5459;
+    // }
+    .podcast-episode {
+      background-color: rgb(255, 255, 255);
+      display: grid;
+      height: $itemHeight;
+      width: 100%;
+      grid-template-columns: 3fr $itemHeight ;
+      text-overflow: clip;
+    //   text-align: center;
+    //   border-bottom:  solid black;
+    //   border-bottom-width:  1px;
+      div {
+        display: flex;
+        align-items: center;
+        text-overflow: clip;
+        font-size: 16px;
+        text-align: center;
+      }
+      button {
+        height: $itemHeight;
+        width: $itemHeight;
+        font-size: 24px;
+        background-color: inherit;
+        border-style: none;
+        svg {
+          width: 0.85em;
+          vertical-align: -0.1em;
+          height: 100%;
+          display: inline-block;
+        }
+      }
+    }
+  }
+}

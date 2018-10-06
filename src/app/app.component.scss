@@ -24,7 +24,9 @@
 
   .router {
     // background-color: #0078d7;
-    overflow-y: scroll;
-    padding: 96px 0 0 48px;
+    // overflow-y: scroll;
+    // overflow-x: hidden;
+    overflow: hidden;
+    // padding: 96px 0 0 48px;
   }
 }

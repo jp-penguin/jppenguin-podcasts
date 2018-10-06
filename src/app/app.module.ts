@@ -31,6 +31,7 @@ import { UiService } from './services/ui.service';
 import { UnplayedComponent } from './components/unplayed/unplayed.component';
 import { DownloadedComponent } from './components/downloaded/downloaded.component';
 import { PlayerComponent } from './components/player/player.component';
+import { PlayerService } from './services/player.service';
 
 // AoT requires an exported function for factories
 export function HttpLoaderFactory(http: HttpClient) {
@@ -67,7 +68,7 @@ export function HttpLoaderFactory(http: HttpClient) {
       }
     })
   ],
-  providers: [UiService, ElectronService],
+  providers: [UiService, ElectronService, PlayerService],
   bootstrap: [AppComponent]
 })
 export class AppModule {}

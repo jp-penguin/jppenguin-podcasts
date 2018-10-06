@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { PodcastModel } from '../models/PodcastModel';
 import * as _ from 'underscore';
+import * as lodash from 'lodash';
 
 @Injectable({
   providedIn: 'root'
@@ -9,23 +10,23 @@ export class SaveStateService {
   public podcasts: PodcastModel[] = [];
   constructor() {
     this.loadState();
-    this.podcasts = _.compact(this.podcasts);
+    this.podcasts = lodash.compact(this.podcasts);
   }
 
   addPodcast(newPodcast: PodcastModel) {
     // console.log(this.podcasts);
 
-    const tempPodcast = _.find(this.podcasts, pod2 => {
+    const tempPodcast = lodash.find(this.podcasts, pod2 => {
       return pod2.url === newPodcast.url;
     });
     // this.podcasts.push(podcast);
     if (!tempPodcast) {
       this.podcasts.push(newPodcast);
     } else {
-      _.each(newPodcast.podcastEpisodes, podcastEpisode => {
-        if (_.include(tempPodcast.podcastEpisodes, podcastEpisode)) {
+      lodash.each(newPodcast.podcastEpisodes, podcastEpisode => {
+        if (lodash.includes(tempPodcast.podcastEpisodes, podcastEpisode)) {
           // console.log(
-          //   _.include(tempPodcast.podcastEpisodes, podcastEpisode).valueOf() +
+          //   lodash.include(tempPodcast.podcastEpisodes, podcastEpisode).valueOf() +
           //     ' asdfasdfasdf ' +
           //     podcastEpisode
           // );
@@ -42,7 +43,7 @@ export class SaveStateService {
   }
 
   loadState() {
-    _.each(
+    lodash.each(
       JSON.parse(localStorage.getItem('podcasts')) as PodcastModel[],
       p => {
         // console.log(p);

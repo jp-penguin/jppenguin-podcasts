@@ -2,6 +2,7 @@ import { PodcastEpisodeModel, Keyword } from './PodcastEpisodeModel';
 import { HttpClient } from '@angular/common/http';
 import * as _ from 'underscore';
 import { element } from '@angular/core/src/render3/instructions';
+import * as lodash from 'lodash';
 
 export class PodcastModel {
   public title: string;
@@ -55,7 +56,7 @@ export class PodcastModel {
 
     // console.log(this.keywords);
 
-    _.each(doc.querySelectorAll('item'), item => {
+    lodash.each(doc.querySelectorAll('item'), item => {
       this.podcastEpisodes.push(new PodcastEpisodeModel(item));
     });
 
@@ -66,15 +67,15 @@ export class PodcastModel {
     // this.keywords = doc.querySelector('channel keywords').innerHTML;
     // console.log(this.title);
     this.url = url;
-    this.id = _.uniqueId();
+    this.id = this.CreateGuid();
 
-    console.log(this.CreateGuid());
+    // console.log(this.CreateGuid());
   }
   CreateGuid() {
     return this._p8(true) + this._p8(true) + this._p8(true) + this._p8(false);
   }
   _p8(s: boolean): string {
-    let p = (Math.random().toString(16) + '000000000').substr(2, 8);
+    const p = (Math.random().toString(16) + '000000000').substr(2, 8);
     return s ? p.substr(0, 4) + p.substr(4, 4) : p;
   }
   private printClass() {
