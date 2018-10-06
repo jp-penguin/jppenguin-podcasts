@@ -18,16 +18,20 @@ export class PlayerService {
     if (this.podcastEpisode === podcastEpisode) {
       if (this.audioPlayer.paused) {
         this.audioPlayer.play();
+        this.podcastEpisode.playing = true;
       } else {
         this.audioPlayer.pause();
+        this.podcastEpisode.playing = false;
       }
     } else {
       this.podcastEpisode = podcastEpisode;
       this.audioPlayer.src = this.podcastEpisode.url;
       this.audioPlayer.play();
+      this.podcastEpisode.playing = true;
     }
   }
   timeUpdate() {
+    console.log(this.audioPlayer.currentTime);
     this.podcastEpisode.currentTime = this.audioPlayer.currentTime;
   }
 }
