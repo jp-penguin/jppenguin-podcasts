@@ -42,17 +42,40 @@ export class SaveStateService {
   saveState() {
     // console.log('Saving');
     if (this.podcasts) {
-      const temp = lodash.slice(this.podcasts);
-      localStorage.setItem(
-        'podcasts',
-        JSON.stringify(
-          lodash.each(temp, p => {
-            lodash.each(p.podcastEpisodes, pe => {
-              pe.playing = false;
-            });
-          })
-        )
-      );
+      // const temp = lodash.slice(this.podcasts);
+      // localStorage.setItem(
+      //   'podcasts',
+      //   JSON.stringify(
+      //     lodash.each(temp, p => {
+      //       lodash.each(p.podcastEpisodes, pe => {
+      //         pe.playing = false;
+      //       });
+      //     })
+      //   )
+      // );
+
+      const i = this.podcasts.length;
+      let tempPodcasts: PodcastModel[];
+
+      tempPodcasts = JSON.parse(
+        JSON.stringify(this.podcasts)
+      ) as PodcastModel[];
+
+      lodash.each(tempPodcasts, podcast => {
+        lodash.each(podcast.podcastEpisodes, podcastEpisode => {
+          podcastEpisode.playing = false;
+        });
+      });
+
+      localStorage.setItem('podcasts', JSON.stringify(tempPodcasts));
+      // console.log(temp);
+
+      // while (i--) {
+      //   temp[i] = this.podcasts[i];
+      //   // console.log(this.podcasts[i]);
+      // }
+      // temp[0].podcastEpisodes[0].playing = !temp[0].podcastEpisodes[0].playing;
+      // console.log((temp[0].podcastEpisodes[0].playing = false));
     }
 
     // console.log('Saved');
