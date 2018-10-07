@@ -3,12 +3,12 @@
 
 
   <div class="podcast-episodes component-padding">
-    <div class="podcast-episode" *ngFor="let podcastEpisode of this.podcast.podcastEpisodes">
+    <div class="podcast-episode" *ngFor="let podcastEpisode of this.saveState.podcasts[id].podcastEpisodes; let i = index; trackBy: saveState.trackById2">
 
       <div>{{podcastEpisode.title}} <br> {{podcast.title}}</div>
       <!-- <div></div> -->
-      <button (click)="playEpisodeClick(podcastEpisode)">
-        <svg [ngStyle]="{'visibility': podcast.playing ? 'hidden' : 'visible'}" xmlns:x="http://ns.adobe.com/Extensibility/1.0/"
+      <button (click)="playEpisodeClick(i)">
+        <svg [ngStyle]="{'visibility': podcastEpisode.playing ? 'hidden' : 'visible'}" xmlns:x="http://ns.adobe.com/Extensibility/1.0/"
           xmlns:i="http://ns.adobe.com/AdobeIllustrator/10.0/" xmlns:graph="http://ns.adobe.com/Graphs/1.0/" xmlns="http://www.w3.org/2000/svg"
           xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" x="0px" y="0px" viewBox="0 0 100 100" style="enable-background:new 0 0 100 100;"
           xml:space="preserve">
@@ -19,7 +19,7 @@
             </g>
           </switch>
         </svg>
-        <svg [ngStyle]="{'visibility': podcast.playing ? 'visible' : 'hidden'}" xmlns:x="http://ns.adobe.com/Extensibility/1.0/"
+        <svg [ngStyle]="{'visibility': podcastEpisode.playing ? 'visible' : 'hidden'}" xmlns:x="http://ns.adobe.com/Extensibility/1.0/"
           xmlns:i="http://ns.adobe.com/AdobeIllustrator/10.0/" xmlns:graph="http://ns.adobe.com/Graphs/1.0/" xmlns="http://www.w3.org/2000/svg"
           xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" x="0px" y="0px" viewBox="0 0 100 100" style="enable-background:new 0 0 100 100;"
           xml:space="preserve">

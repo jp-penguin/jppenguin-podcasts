@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { PodcastModel } from '../models/PodcastModel';
 import * as _ from 'underscore';
 import * as lodash from 'lodash';
+import { PodcastEpisodeModel } from '../models/PodcastEpisodeModel';
 
 @Injectable({
   providedIn: 'root'
@@ -39,7 +40,22 @@ export class SaveStateService {
   }
 
   saveState() {
-    localStorage.setItem('podcasts', JSON.stringify(this.podcasts));
+    // console.log('Saving');
+    if (this.podcasts) {
+      const temp = lodash.slice(this.podcasts);
+      localStorage.setItem(
+        'podcasts',
+        JSON.stringify(
+          lodash.each(temp, p => {
+            lodash.each(p.podcastEpisodes, pe => {
+              pe.playing = false;
+            });
+          })
+        )
+      );
+    }
+
+    // console.log('Saved');
   }
 
   loadState() {
@@ -51,5 +67,12 @@ export class SaveStateService {
       }
     );
     console.log(this.podcasts);
+  }
+
+  trackById(index: number, podcast: PodcastModel): string {
+    return podcast.id;
+  }
+  trackById2(index: number, podcast: PodcastEpisodeModel): string {
+    return podcast.url;
   }
 }

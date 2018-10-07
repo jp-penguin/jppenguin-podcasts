@@ -3,6 +3,7 @@ import { ElectronService } from './providers/electron.service';
 import { TranslateService } from '@ngx-translate/core';
 import { AppConfig } from '../environments/environment';
 import { UiService } from './services/ui.service';
+import { SaveStateService } from './services/save-state.service';
 
 @Component({
   selector: 'app-root',
@@ -13,7 +14,8 @@ export class AppComponent {
   constructor(
     public electronService: ElectronService,
     private translate: TranslateService,
-    public uiService: UiService
+    public uiService: UiService,
+    public saveState: SaveStateService
   ) {
     translate.setDefaultLang('en');
     console.log('AppConfig', AppConfig);
@@ -25,5 +27,15 @@ export class AppComponent {
     } else {
       console.log('Mode web');
     }
+
+    setInterval(() => {
+      // if (this.saveState.podcasts) {
+      //   localStorage.setItem(
+      //     'podcasts',
+      //     JSON.stringify(this.saveState.podcasts)
+      //   );
+      // }
+      this.saveState.saveState();
+    }, 1000);
   }
 }

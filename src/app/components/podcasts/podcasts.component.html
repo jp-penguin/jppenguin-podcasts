@@ -1,5 +1,6 @@
 <div class="podcasts">
-  <div class="podcast" *ngFor="let podcast of this.saveState.podcasts" (click)="podcastClick(podcast.id)">
+  <div class="podcast" *ngFor="let podcast of this.saveState.podcasts; let i = index; trackBy:saveState.trackById"
+    (click)="podcastClick(i)">
     <img src="{{podcast.imageUrl}}" alt="">
     <!-- {{podcast.title}} -->
   </div>

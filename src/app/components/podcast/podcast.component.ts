@@ -14,6 +14,8 @@ import { PlayerService } from '../../services/player.service';
 })
 export class PodcastComponent implements OnInit {
   public podcast: PodcastModel;
+
+  id: number;
   constructor(
     private activatedRouter: ActivatedRoute,
     private saveState: SaveStateService,
@@ -27,15 +29,21 @@ export class PodcastComponent implements OnInit {
     this.activatedRouter.params.subscribe(params => {
       console.log(params);
 
-      this.podcast = lodash.find(this.saveState.podcasts, podcast => {
-        return podcast.id === params['id'];
-      });
+      this.id = parseInt(params['id'], 10);
+      this.podcast = this.saveState.podcasts[params['id']];
+      // lodash.find(this.saveState.podcasts, podcast => {
+      //   return podcast.id === params['id'];
+      // });
       console.log(this.podcast);
     });
   }
 
-  playEpisodeClick(podcastEpisode: PodcastEpisodeModel) {
-    console.log(podcastEpisode.title);
-    this.playerService.play(podcastEpisode);
+  playEpisodeClick(id: number) {
+    // this.podcast.podcastEpisodes[id].playing = !this.podcast.podcastEpisodes[id]
+    //   .playing;
+    // this.podcast.podcastEpisodes[id].title = 'hjufydtd';
+    // this.saveState.saveState();
+    // console.log(podcastEpisode.title);
+    this.playerService.play(this.podcast.podcastEpisodes[id]);
   }
 }
