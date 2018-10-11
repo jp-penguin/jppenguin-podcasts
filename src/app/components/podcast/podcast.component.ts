@@ -31,6 +31,7 @@ export class PodcastComponent implements OnInit {
 
       this.id = parseInt(params['id'], 10);
       this.podcast = this.saveState.podcasts[params['id']];
+
       // lodash.find(this.saveState.podcasts, podcast => {
       //   return podcast.id === params['id'];
       // });
@@ -45,5 +46,13 @@ export class PodcastComponent implements OnInit {
     // this.saveState.saveState();
     // console.log(podcastEpisode.title);
     this.playerService.play(this.podcast.podcastEpisodes[id]);
+  }
+
+  sortEpisodes() {
+    return lodash
+      .sortBy<PodcastEpisodeModel[]>(this.podcast.podcastEpisodes, e => {
+        return (e as PodcastEpisodeModel).pubDate;
+      })
+      .reverse();
   }
 }

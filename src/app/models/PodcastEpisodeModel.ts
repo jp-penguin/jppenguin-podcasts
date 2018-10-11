@@ -21,6 +21,10 @@ export class PodcastEpisodeModel {
     this.title = (item.querySelector('title') as HTMLElement).innerHTML;
     this.subtitle = (item.querySelector('subtitle') as HTMLElement).innerHTML;
     this.summary = (item.querySelector('summary') as HTMLElement).innerHTML;
+    this.pubDate = new Date(
+      (item.querySelector('pubDate') as HTMLElement).innerHTML
+    );
+    // console.log(this.pubDate);
 
     // this.episode = (item.querySelector('episode') as HTMLElement).innerText;
 

@@ -25,12 +25,17 @@ export class SaveStateService {
       this.podcasts.push(newPodcast);
     } else {
       lodash.each(newPodcast.podcastEpisodes, podcastEpisode => {
-        if (lodash.includes(tempPodcast.podcastEpisodes, podcastEpisode)) {
+        if (
+          !lodash.find(tempPodcast.podcastEpisodes, pe => {
+            return podcastEpisode.url === pe.url;
+          })
+        ) {
           // console.log(
           //   lodash.include(tempPodcast.podcastEpisodes, podcastEpisode).valueOf() +
           //     ' asdfasdfasdf ' +
           //     podcastEpisode
           // );
+
           tempPodcast.podcastEpisodes.push(podcastEpisode);
         }
       });

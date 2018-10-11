@@ -130,8 +130,8 @@ export class UiService {
   }
 
   public refreshButtonClick() {
-    lodash.each(this.urls, url => {
-      this.getPodcast(url);
+    lodash.each(this.saveState.podcasts, podcast => {
+      this.getPodcast(podcast.url);
     });
   }
 
@@ -145,6 +145,8 @@ export class UiService {
         // console.log(data);
         const parser = new DOMParser();
         const doc = parser.parseFromString(data, 'text/xml');
+        // console.log(doc);
+
         // console.log(doc.querySelector('channel'));
 
         const podcast = new PodcastModel(doc, url);

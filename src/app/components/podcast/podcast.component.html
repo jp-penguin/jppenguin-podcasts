@@ -3,7 +3,7 @@
 
 
   <div class="podcast-episodes component-padding">
-    <div class="podcast-episode" *ngFor="let podcastEpisode of this.saveState.podcasts[id].podcastEpisodes; let i = index; trackBy: saveState.trackById2">
+    <div class="podcast-episode" *ngFor="let podcastEpisode of sortEpisodes(); let i = index; trackBy: saveState.trackById2">
 
       <div>{{podcastEpisode.title}} <br> {{podcast.title}}</div>
       <!-- <div></div> -->

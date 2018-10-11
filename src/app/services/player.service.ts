@@ -36,8 +36,15 @@ export class PlayerService {
         this.podcastEpisode.playing = false;
       }
     } else {
+      if (this.podcastEpisode) {
+        this.podcastEpisode.playing = false;
+      }
       this.podcastEpisode = podcastEpisode;
       this.audioPlayer.src = podcastEpisode.url;
+      console.log('curretime' + this.podcastEpisode.currentTime);
+      if (!this.podcastEpisode.currentTime) {
+        this.podcastEpisode.currentTime = 0;
+      }
       this.audioPlayer.currentTime = this.podcastEpisode.currentTime;
       // this.audioPlayer.removeEventListener('timeupdate', (event: Event) => {
       //   this.podcastEpisode.currentTime = (event as any).path[0].currentTime;
@@ -45,7 +52,6 @@ export class PlayerService {
       // this.audioPlayer.addEventListener('timeupdate', (event: Event) => {
       //   this.podcastEpisode.currentTime = (event as any).path[0].currentTime;
       // });
-      console.log('curretime' + this.podcastEpisode.currentTime);
       this.audioPlayer.play();
       this.podcastEpisode.playing = true;
     }
