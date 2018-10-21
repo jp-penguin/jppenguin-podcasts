@@ -7,23 +7,25 @@ body {
   overflow: hidden;
   height: 100%;
 }
+
 body {
   // position: absolute;
   // width: 100%;
   // bottom: 48px;
 }
+
 .component-padding {
   // padding: 48px 0 0 48px;
 }
 
 .parent-grid {
   display: grid;
-  grid-template-rows: 85vh 15vh;
+  grid-template-rows: 90vh 10vh;
 }
 
 .navigation {
   // background-color: rgba(0, 99, 177, 1);
-  background-color: #5d5a58;
+  // background-color: #5d5a58;
 
   height: 100%;
 }
@@ -38,6 +40,7 @@ body {
     border-width: 0.2px;
   }
 }
+
 // .default .player {
 //   height: 48px;
 //   position: absolute;

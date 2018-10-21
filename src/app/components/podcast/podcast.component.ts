@@ -50,9 +50,12 @@ export class PodcastComponent implements OnInit {
 
   sortEpisodes() {
     return lodash
-      .sortBy<PodcastEpisodeModel[]>(this.podcast.podcastEpisodes, e => {
-        return (e as PodcastEpisodeModel).pubDate;
-      })
+      .sortBy<PodcastEpisodeModel[]>(
+        this.podcast.podcastEpisodes,
+        (e: PodcastEpisodeModel) => {
+          return e.pubDate;
+        }
+      )
       .reverse();
   }
 }

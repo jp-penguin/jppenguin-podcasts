@@ -1,5 +1,6 @@
 $itemHeight: 64px;
 $borderWidth: 1px;
+
 .podcast {
   display: grid;
   grid-template-rows: ($itemHeight * 1.5) auto;
@@ -14,6 +15,7 @@ $borderWidth: 1px;
     width: 100%;
     overflow-y: scroll;
     overflow-x: hidden;
+
     // > div:nth-child(odd) {
     //   background-color: #7a7574;
     // }
@@ -21,15 +23,16 @@ $borderWidth: 1px;
     //   background-color: #4a5459;
     // }
     .podcast-episode {
-      background-color: rgb(255, 255, 255);
+      // background-color: rgb(255, 255, 255);
       display: grid;
       height: $itemHeight;
       width: 100%;
-      grid-template-columns: 3fr $itemHeight ;
+      grid-template-columns: 3fr $itemHeight;
       text-overflow: clip;
-    //   text-align: center;
-    //   border-bottom:  solid black;
-    //   border-bottom-width:  1px;
+
+      //   text-align: center;
+      //   border-bottom:  solid black;
+      //   border-bottom-width:  1px;
       div {
         display: flex;
         align-items: center;
@@ -37,12 +40,14 @@ $borderWidth: 1px;
         font-size: 16px;
         text-align: center;
       }
+
       button {
         height: $itemHeight;
         width: $itemHeight;
         font-size: 24px;
         background-color: inherit;
         border-style: none;
+
         svg {
           width: 0.85em;
           vertical-align: -0.1em;
