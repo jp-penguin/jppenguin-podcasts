@@ -20,7 +20,7 @@ body {
 
 .parent-grid {
   display: grid;
-  grid-template-rows: 90vh 10vh;
+  grid-template-rows: minmax(540px, 1fr) 100px;
 }
 
 .navigation {
