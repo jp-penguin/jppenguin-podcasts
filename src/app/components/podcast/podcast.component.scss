@@ -2,8 +2,17 @@ $itemHeight: 64px;
 $borderWidth: 1px;
 
 .podcast {
+  height: 100%;
+
+  ::-webkit-scrollbar {
+    width: 5px;
+    height: 8px;
+    background-color: #000000;
+    /* or add it to the track */
+  }
+
   .podcast-episodes {
-    overflow: scroll;
+    overflow-y: scroll;
   }
 
   button {
@@ -18,6 +27,10 @@ $borderWidth: 1px;
       vertical-align: -0.1em;
       height: 100%;
       display: inline-block;
+    }
+
+    table {
+      height: 100%;
     }
   }
 

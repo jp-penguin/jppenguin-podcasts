@@ -5,29 +5,14 @@ body {
   margin: 0;
   padding: 0;
   overflow: hidden;
-  height: 100%;
+  height: 100vh;
 }
 
-body {
-  // position: absolute;
-  // width: 100%;
-  // bottom: 48px;
-}
-
-.component-padding {
-  // padding: 48px 0 0 48px;
-}
 
 .parent-grid {
   display: grid;
-  grid-template-rows: minmax(540px, 1fr) 100px;
-}
-
-.navigation {
-  // background-color: rgba(0, 99, 177, 1);
-  // background-color: #5d5a58;
-
-  height: 100%;
+  height: 100vh;
+  grid-template-rows: 1fr 100px;
 }
 
 .nav-top-grid {
