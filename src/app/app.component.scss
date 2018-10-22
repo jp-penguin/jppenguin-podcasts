@@ -11,18 +11,6 @@
     // box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
   }
 
-  &.main-grid-off {
-    grid-template-columns: 48px auto;
-
-    .nav-grid {
-      display: grid;
-      grid-template-columns: 48px 0;
-    }
-
-    // .nav-text {
-    //   visibility: hidden;
-    // }
-  }
 
   .router {
     // background-color: #0078d7;
@@ -30,5 +18,40 @@
     // overflow-x: hidden;
     overflow: hidden;
     // padding: 96px 0 0 48px;
+  }
+
+
+  @media (max-width: 770.997px) {
+
+    &.main-grid-off {
+
+      button#navButton.nav-button {
+        visibility: visible;
+        display: block;
+      }
+
+      // .nav-text {
+      //   visibility: hidden;
+      // }
+      grid-template-columns: 0 auto;
+
+      .nav-grid {
+        visibility: hidden;
+
+      }
+    }
+  }
+
+  @media (min-width: 771px) {
+    &.main-grid-off {
+
+      grid-template-columns: 48px auto;
+
+
+      .nav-grid {
+        display: grid;
+        grid-template-columns: 48px 0;
+      }
+    }
   }
 }
