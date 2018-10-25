@@ -2,18 +2,18 @@
 // @import '~@angular/material/prebuilt-themes/deeppurple-amber.css';
 // @import "~normalize.css/normalize.css";
 $font-family-sans-serif:
-  // Safari for OS X and iOS (San Francisco)
-  -apple-system,
-  // Chrome < 56 for OS X (San Francisco)
-  BlinkMacSystemFont,
+  // Safari for OS X and iOS (San Francisco) -apple-system,
+  // Chrome < 56 for OS X (San Francisco) BlinkMacSystemFont,
   // Windows
-  "Segoe UI",
+    'Segoe UI',
   // Android
-  "Roboto",
+    'Roboto',
   // Basic web fallback
-  "Helvetica Neue", Arial, sans-serif,
+    'Helvetica Neue',
+  Arial, sans-serif,
   // Emoji fonts
-  "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol" !default;
+    'Apple Color Emoji',
+  'Segoe UI Emoji', 'Segoe UI Symbol' !default;
 // html,
 // body {
 //   margin: 0;
@@ -97,9 +97,10 @@ $font-family-sans-serif:
 // }
 
 body {
-    overflow: hidden;
+  overflow: hidden;
 }
 
 .grid {
-    display: grid;
+  display: grid;
+  //   height: 100vh;
 }

@@ -3,3 +3,22 @@
 // }
 
 // .nav-button-page {}
+.nav-vertical {
+  height: 100vh;
+  grid-template-rows: repeat(auto-fit, 40px);
+  > * {
+    background-color: red;
+    display: grid;
+    border-style: none;
+    grid-template-columns: repeat(auto-fit, auto);
+    grid-template-columns: auto auto;
+
+    svg {
+      width: 40px;
+    }
+  }
+}
+
+.full-height {
+  height: 100vh;
+}
