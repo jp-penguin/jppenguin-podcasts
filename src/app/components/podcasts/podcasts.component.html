@@ -1,4 +1,4 @@
-<div class="podcasts">
+<div class="podcasts grid">
   <div class="podcast" *ngFor="let podcast of this.saveState.podcasts; let i = index; trackBy:saveState.trackById"
     (click)="podcastClick(i)">
     <img src="{{podcast.imageUrl}}" alt="">

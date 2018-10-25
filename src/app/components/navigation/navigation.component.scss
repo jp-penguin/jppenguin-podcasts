@@ -1,23 +1,23 @@
-$navWidth: 273px;
-$font: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+// $navWidth: 273px;
+// $font: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 
-button {
-  width: $navWidth;
-  text-align: justify;
-  font-size: 16px;
-  font-family: $font;
-}
+// button {
+//   width: $navWidth;
+//   text-align: justify;
+//   font-size: 16px;
+//   font-family: $font;
+// }
 
-.navigation-page {
-  width: $navWidth;
+// .navigation-page {
+//   width: $navWidth;
 
-  div {
-    width: inherit;
-  }
+//   div {
+//     width: inherit;
+//   }
 
-  input {
-    width: $navWidth - 10px;
-    height: 32px;
-    font-family: $font;
-  }
-}
+//   input {
+//     width: $navWidth - 10px;
+//     height: 32px;
+//     font-family: $font;
+//   }
+// }

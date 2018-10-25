@@ -1,57 +1,67 @@
-.main-grid {
-  display: grid;
-  // height: 100%;
-  grid-template-columns: 321px auto;
-  overflow: hidden;
+// .main-grid {
+//   display: grid;
+//   // height: 100%;
+//   grid-template-columns: 321px auto;
+//   overflow: hidden;
 
-  .nav-grid {
-    display: grid;
-    grid-template-columns: 48px 273px;
+//   .nav-grid {
+//     display: grid;
+//     grid-template-columns: 48px 273px;
 
-    // box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-  }
+//     // box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+//   }
 
 
-  .router {
-    // background-color: #0078d7;
-    // overflow-y: scroll;
-    // overflow-x: hidden;
+//   .router {
+//     // background-color: #0078d7;
+//     // overflow-y: scroll;
+//     // overflow-x: hidden;
+//     overflow: hidden;
+//     // padding: 96px 0 0 48px;
+//   }
+
+
+//   @media (max-width: 770.997px) {
+
+//     &.main-grid-off {
+
+//       button#navButton.nav-button {
+//         visibility: visible;
+//         display: block;
+//       }
+
+//       // .nav-text {
+//       //   visibility: hidden;
+//       // }
+//       grid-template-columns: 0 auto;
+
+//       .nav-grid {
+//         visibility: hidden;
+
+//       }
+//     }
+//   }
+
+//   @media (min-width: 771px) {
+//     &.main-grid-off {
+
+//       grid-template-columns: 48px auto;
+
+
+//       .nav-grid {
+//         display: grid;
+//         grid-template-columns: 48px 0;
+//       }
+//     }
+//   }
+// }
+
+.parent-grid {
     overflow: hidden;
-    // padding: 96px 0 0 48px;
-  }
-
-
-  @media (max-width: 770.997px) {
-
-    &.main-grid-off {
-
-      button#navButton.nav-button {
-        visibility: visible;
-        display: block;
-      }
-
-      // .nav-text {
-      //   visibility: hidden;
-      // }
-      grid-template-columns: 0 auto;
-
-      .nav-grid {
-        visibility: hidden;
-
-      }
+    grid-template-rows: 1fr 96px;
+    
+    .main-grid {
+        grid-template-columns: auto 1fr;
+        overflow: hidden;
     }
-  }
-
-  @media (min-width: 771px) {
-    &.main-grid-off {
-
-      grid-template-columns: 48px auto;
-
-
-      .nav-grid {
-        display: grid;
-        grid-template-columns: 48px 0;
-      }
-    }
-  }
 }

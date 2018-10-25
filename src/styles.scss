@@ -1,75 +1,105 @@
-/* You can add global styles to this file, and also import other style files */
+// /* You can add global styles to this file, and also import other style files */
+// @import '~@angular/material/prebuilt-themes/deeppurple-amber.css';
+// @import "~normalize.css/normalize.css";
+$font-family-sans-serif:
+  // Safari for OS X and iOS (San Francisco)
+  -apple-system,
+  // Chrome < 56 for OS X (San Francisco)
+  BlinkMacSystemFont,
+  // Windows
+  "Segoe UI",
+  // Android
+  "Roboto",
+  // Basic web fallback
+  "Helvetica Neue", Arial, sans-serif,
+  // Emoji fonts
+  "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol" !default;
+// html,
+// body {
+//   margin: 0;
+//   padding: 0;
+//   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif
+// }
+// a, button {
+//     &.btn {
+//         height: 36px;
+//         min-width: 36px;
+//         svg {
 
-html,
-body {
-  margin: 0;
-  padding: 0;
-  overflow: hidden;
-  height: 100vh;
-}
-
-
-.parent-grid {
-  display: grid;
-  height: 100vh;
-  grid-template-rows: 1fr 100px;
-}
-
-.nav-top-grid {
-  position: fixed;
-  top: 48px;
-  display: grid;
-  grid-template-rows: repeat(auto-fill, 48px);
-
-  hr {
-    border-width: 0.2px;
-  }
-}
-
-// .default .player {
-//   height: 48px;
-//   position: absolute;
-//   bottom: 0px;
-//   background-color: black;
-//   width: 100vw;
+//             padding: 8px;
+//         }
+//     }
 // }
 
-.nav-bottom-grid {
-  position: fixed;
-  bottom: 48px;
-  display: grid;
-  grid-template-rows: repeat(auto-fill, 48px);
+// .parent-grid {
+//   display: grid;
+//   height: 100vh;
+//   grid-template-rows: 1fr 100px;
+// }
 
-  hr {
-    border-width: 0 0 0.2px 0;
-  }
+// .nav-top-grid {
+//   position: fixed;
+//   top: 48px;
+//   display: grid;
+//   grid-template-rows: repeat(auto-fill, 48px);
 
-  // hr {
-  //   width: 100%;
-  //   border-width: 0.2px;
-  //   color: lightgrey;
-  // }
+//   hr {
+//     border-width: 0.2px;
+//   }
+// }
+
+// // .default .player {
+// //   height: 48px;
+// //   position: absolute;
+// //   bottom: 0px;
+// //   background-color: black;
+// //   width: 100vw;
+// // }
+
+// .nav-bottom-grid {
+//   position: fixed;
+//   bottom: 48px;
+//   display: grid;
+//   grid-template-rows: repeat(auto-fill, 48px);
+
+//   hr {
+//     border-width: 0 0 0.2px 0;
+//   }
+
+//   // hr {
+//   //   width: 100%;
+//   //   border-width: 0.2px;
+//   //   color: lightgrey;
+//   // }
+// }
+
+// .nav-top-grid,
+// .nav-bottom-grid {
+//   button {
+//     height: 48px;
+//     width: 48px;
+//     border: none;
+//     background-color: inherit;
+//     color: rgb(255, 255, 255);
+//   }
+
+//   hr {
+//     width: 100%;
+//     // border-width: 0 0 0.2px 0;
+//     color: lightgrey;
+//   }
+
+//   #searchHolder {
+//     height: 48px;
+//     display: flex;
+//     align-items: center;
+//   }
+// }
+
+body {
+    overflow: hidden;
 }
 
-.nav-top-grid,
-.nav-bottom-grid {
-  button {
-    height: 48px;
-    width: 48px;
-    border: none;
-    background-color: inherit;
-    color: rgb(255, 255, 255);
-  }
-
-  hr {
-    width: 100%;
-    // border-width: 0 0 0.2px 0;
-    color: lightgrey;
-  }
-
-  #searchHolder {
-    height: 48px;
-    display: flex;
-    align-items: center;
-  }
+.grid {
+    display: grid;
 }

@@ -1,19 +1,53 @@
 <div class='navigation nav-button-page '>
 
-  <div class="nav-top-grid">
+  <nav class="nav flex-column">
     <!-- <div></div> -->
-    <button id='navButton' (click)="uiService.navigatoinButtonClick();" class="fas fa-bars nav-button" style="visibility: visible"></button>
-    <button id='searchButton' (click)="uiService.searchButtonClick();" class="fas fa-search"></button>
-    <button id='libraryButton' (click)="uiService.libraryButtonClick();" class="fas fa-podcast"></button>
-    <button id='playlistButton' (click)="uiService.playlistButtonClick();" class="fas fa-bars"></button>
-    <button id='unplayedButton' (click)="uiService.unplayedButtonClick();" class="fas fa-microphone"></button>
-    <button id='downloadedButton' (click)="uiService.downloadedButtonClick();" class="fas fa-download"></button>
-    <button id='nowPlayingButton' (click)="uiService.playerButtonClick();" class="fas fa-headphones"></button>
-    <button id='refreshButton' (click)="uiService.refreshButtonClick();" class="fas fa-sync"></button>
-    <button id='storeButton' (click)="uiService.storeButtonClick();" class="fas fa-store"></button>
-    <button id='settingsButton' (click)="uiService.settingsButtonClick();" class="fas fa-cog"></button>
+    <li class="nav-link" id='navButton' (click)="uiService.navigatoinButtonClick();">
+      <span class="fas fa-bars" aria-hidden="true"></span>
+      <span class="sr-only">Menu</span>
+    </li>
+    <li class="nav-link" id='searchButton' (click)="uiService.searchButtonClick();">
+      <div class="fas fa-search"></div>
+    </li>
+    <li class="nav-link" id='libraryButton' (click)="uiService.libraryButtonClick();">
+      <div class="fas fa-podcast"></div>
+    </li>
+    <li class="nav-link" id='playlistButton' (click)="uiService.playlistButtonClick();">
+      <div class="fas fa-bars"></div>
+    </li>
+    <li class="nav-link" id='unplayedButton' (click)="uiService.unplayedButtonClick();">
+      <div class="fas fa-microphone"></div>
+    </li>
+    <li class="nav-link" id='downloadedButton' (click)="uiService.downloadedButtonClick();">
+      <div class="fas fa-download"></div>
+    </li>
+    <li class="nav-link" id='nowPlayingButton' (click)="uiService.playerButtonClick();">
+      <div class="fas fa-headphones"></div>
+    </li>
+    <li class="nav-link" id='refreshButton' (click)="uiService.refreshButtonClick();">
+      <div class="fas fa-sync"></div>
+    </li>
+    <li class="nav-link" id='storeButton' (click)="uiService.storeButtonClick();">
+      <div class="fas fa-store"></div>
+    </li>
+    <li class="nav-link" id='settingsButton' (click)="uiService.settingsButtonClick();">
+      <div class="fas fa-cog"></div>
+    </li>
     <!-- <hr> -->
-  </div>
-
+  </nav>
+  <ul class="nav flex-column">
+    <li class="nav-item">
+      <a class="nav-link active" href="#">Active</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="#">Link</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="#">Link</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link disabled" href="#">Disabled</a>
+    </li>
+  </ul>
 
 </div>
