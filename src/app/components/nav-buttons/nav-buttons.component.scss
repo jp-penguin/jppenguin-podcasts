@@ -5,23 +5,40 @@
 // .nav-button-page {}
 .nav-vertical {
   height: 100vh;
-  grid-template-rows: repeat(auto-fit, 40px);
+  grid-template-rows: repeat(auto-fit, 48px);
 
-  >* {
-    background-color: red;
+  > * {
+    max-width: 250px;
+    background-color: inherit;
+    color: #f8f9fa;
     display: grid;
     // border-style: none;
-    grid-template-columns: repeat(auto-fit, auto);
-    grid-template-columns: auto auto;
+    // grid-template-columns: repeat(auto-fit, auto);
+    grid-template-columns: 48px auto;
+    // grid-auto-columns: min-content;
     grid-gap: 5px;
-    padding: 10px;
 
+    :first-child {
+      margin-left: 12px;
+    }
+    :last-child {
+      width: 90%;
+    }
+
+    // padding: 10px;
+    align-items: center;
+    justify-items: left;
+
+    > input[type='text'] {
+      background-color: #f8f9fa;
+      max-width: 250px;
+      //   max-width: 5px;
+    }
     svg {
       width: 40px;
     }
   }
 }
-
 .full-height {
   height: 100vh;
 }
