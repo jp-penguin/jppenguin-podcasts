@@ -2,10 +2,10 @@
 
   <div class="grid nav-vertical">
     <!--  <div></div> -->
-    <div id='navButton' (click)="uiService.navigatoinButtonClick();"><span class="fas fa-bars"></span>
+    <div id='navButton' (click)="uiService.navigatoinButtonClick();" class="visible"><span class="fas fa-bars"></span>
       <span>rdfft</span></div>
     <div id='searchButton' (click)="uiService.searchButtonClick();"><span class="fas fa-search"></span>
-      <input type="text" name="" id=""></div>
+      <input id="searchBox" type="search" (keyup)="searchKeyPress($event)" #searchBox> </div>
     <div id='libraryButton' (click)="uiService.libraryButtonClick();"><span class="fas fa-podcast"></span><span></span></div>
     <div id='playlistButton' (click)="uiService.playlistButtonClick();"><span class="fas fa-bars"></span><span></span></div>
     <div id='unplayedButton' (click)="uiService.unplayedButtonClick();"><span class="fas fa-microphone"></span><span></span></div>

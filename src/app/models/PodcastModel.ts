@@ -40,7 +40,23 @@ export class PodcastModel {
   constructor(doc: Document, url: string) {
     this.title = doc.querySelector('channel title').innerHTML;
     this.description = doc.querySelector('channel description').innerHTML;
-    this.imageUrl = doc.querySelector('channel image url').innerHTML;
+
+    const iTunesImage = doc.getElementsByTagNameNS(
+      'http://www.itunes.com/dtds/podcast-1.0.dtd',
+      'image'
+    )[0];
+
+    if (iTunesImage) {
+      this.imageUrl = doc
+        .getElementsByTagNameNS(
+          'http://www.itunes.com/dtds/podcast-1.0.dtd',
+          'image'
+        )[0]
+        .getAttribute('href');
+    } else {
+      this.imageUrl = doc.querySelector('channel image url').innerHTML;
+    }
+
     this.subtitle = doc.querySelector('channel subtitle').innerHTML;
     this.author = doc.querySelector('channel author').innerHTML;
     this.summary = doc.querySelector('channel summary').innerHTML;
