@@ -1,6 +1,6 @@
 <div class='navigation nav-button-page '>
 
-  <div class="grid nav-vertical">
+  <div class="grid nav-vertical scroll-y">
     <!--  <div></div> -->
     <div id='navButton' (click)="uiService.navigatoinButtonClick();" class="visible"><span class="fas fa-bars"></span>
       <span>rdfft</span></div>
@@ -16,6 +16,7 @@
         Podcasts</span></div>
     <div id='storeButton' (click)="uiService.storeButtonClick();"><span class="fas fa-store"></span><span>Store</span></div>
     <div id='settingsButton' (click)="uiService.settingsButtonClick();"><span class="fas fa-cog"></span><span>Settings</span></div>
+    <div id='settingsButton' (click)="saveState.reset();"><span class="fas fa-cog"></span><span>Reset</span></div>
     <!-- <hr> -->
     <div>
       <span></span>

@@ -76,3 +76,12 @@
 //   //   }
 //   // }
 // }
+
+.podcast-episodes {
+  height: 100vh;
+}
+
+
+table tbody tr> :last-child {
+  text-align: right !important;
+}
