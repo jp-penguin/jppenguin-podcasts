@@ -82,6 +82,6 @@
 }
 
 
-table tbody tr> :last-child {
-  text-align: right !important;
+table tbody tr> :nth-child(3) {
+  width: 75px;
 }

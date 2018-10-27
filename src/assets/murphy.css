@@ -570,12 +570,16 @@ table {
       background-color: #28415b !important; }
     table tbody > :nth-child(odd):disabled {
       background-color: #325172 !important; }
+    table tbody > :nth-child(odd).active {
+      background-color: #4673a3 !important; }
   table tbody > :nth-child(even) {
     background-color: #444; }
     table tbody > :nth-child(even):hover {
       background-color: #2b2b2b !important; }
     table tbody > :nth-child(even):disabled {
       background-color: #3d3d3d !important; }
+    table tbody > :nth-child(even).active {
+      background-color: #5e5e5e !important; }
   table th {
     padding: 10px; }
   table td,
@@ -597,54 +601,72 @@ table {
       background-color: #28415b !important; }
     table.table-primary:disabled {
       background-color: #325172 !important; }
+    table.table-primary.active {
+      background-color: #4673a3 !important; }
   table.table-secondary {
     background-color: #444; }
     table.table-secondary:hover {
       background-color: #2b2b2b !important; }
     table.table-secondary:disabled {
       background-color: #3d3d3d !important; }
+    table.table-secondary.active {
+      background-color: #5e5e5e !important; }
   table.table-success {
     background-color: #00bc8c; }
     table.table-success:hover {
       background-color: #008966 !important; }
     table.table-success:disabled {
       background-color: #00a97e !important; }
+    table.table-success.active {
+      background-color: #00efb2 !important; }
   table.table-info {
     background-color: #3498db; }
     table.table-info:hover {
       background-color: #217dbb !important; }
     table.table-info:disabled {
       background-color: #2f89c5 !important; }
+    table.table-info.active {
+      background-color: #5faee3 !important; }
   table.table-warning {
     background-color: #f39c12; }
     table.table-warning:hover {
       background-color: #c87f0a !important; }
     table.table-warning:disabled {
       background-color: #db8c10 !important; }
+    table.table-warning.active {
+      background-color: #f5b043 !important; }
   table.table-danger {
     background-color: #e74c3c; }
     table.table-danger:hover {
       background-color: #d62c1a !important; }
     table.table-danger:disabled {
       background-color: #d04436 !important; }
+    table.table-danger.active {
+      background-color: #ed7669 !important; }
   table.table-light {
     background-color: #303030; }
     table.table-light:hover {
       background-color: #171717 !important; }
     table.table-light:disabled {
       background-color: #2b2b2b !important; }
+    table.table-light.active {
+      background-color: #4a4a4a !important; }
   table.table-dark {
     background-color: #adb5bd; }
     table.table-dark:hover {
       background-color: #919ca6 !important; }
     table.table-dark:disabled {
       background-color: #9ca3aa !important; }
+    table.table-dark.active {
+      background-color: #c9cfd4 !important; }
   table.table-link {
     background-color: #375a7f; }
     table.table-link:hover {
       background-color: #28415b !important; }
     table.table-link:disabled {
       background-color: #325172 !important; }
+    table.table-link.active {
+      background-color: #4673a3 !important; }
   table.table-outline-primary {
     background-color: inherit;
     border-color: #375a7f;
