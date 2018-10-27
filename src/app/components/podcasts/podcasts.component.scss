@@ -44,7 +44,7 @@ $gridWidth: 150px;
   padding-left: 10px;
 
   &.header {
-    grid-template-rows: 118px 1fr;
+    grid-template-rows: auto 1fr;
   }
 
   > :last-child {
@@ -52,6 +52,7 @@ $gridWidth: 150px;
     // align-items: center;
     // align-self: center;
     display: grid;
+    margin-top: 10px;
     grid-gap: 5px;
 
     @include galleryGrid(0px, 379.97px, 120px);
@@ -66,7 +67,7 @@ $gridWidth: 150px;
     grid-row-gap: 10px;
     grid-column-gap: 5px;
     > :first-child {
-      font-size: 38px;
+      // font-size: 38px;
     }
   }
 }
