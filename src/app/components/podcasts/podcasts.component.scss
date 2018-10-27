@@ -25,11 +25,10 @@ $gridWidth: 150px;
 
 @mixin galleryGrid($minWidth, $maxWidth, $width) {
   @media (min-width: $minWidth) and (max-width: $maxWidth) {
-
     grid-template-columns: repeat(auto-fit, $width);
     grid-template-rows: repeat(auto-fit, $width);
 
-    >* {
+    > * {
       height: $width;
     }
 
@@ -42,7 +41,7 @@ $gridWidth: 150px;
 
 .gallery {
   height: 100vh;
-
+  padding-left: 10px;
 
   &.header {
     grid-template-rows: 118px 1fr;
@@ -57,21 +56,15 @@ $gridWidth: 150px;
 
     @include galleryGrid(0px, 379.97px, 120px);
     @include galleryGrid(380px, 100000px, 150px);
-
-
-
-
-
-
   }
 
   > :first-child {
     overflow: hidden;
     align-self: center;
     display: grid;
-    grid-template-rows: auto 24px;
+    grid-template-rows: auto auto;
     grid-row-gap: 10px;
-
+    grid-column-gap: 5px;
     > :first-child {
       font-size: 38px;
     }
