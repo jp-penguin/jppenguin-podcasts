@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, NgModule } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
 import { SaveStateService } from '../../services/save-state.service';
 import * as _ from 'underscore';
@@ -6,11 +6,15 @@ import * as lodash from 'lodash';
 import { PodcastModel } from '../../models/PodcastModel';
 import { PodcastEpisodeModel } from '../../models/PodcastEpisodeModel';
 import { PlayerService } from '../../services/player.service';
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-podcast',
   templateUrl: './podcast.component.html',
   styleUrls: ['./podcast.component.scss']
+})
+@NgModule({
+  imports: [CommonModule]
 })
 export class PodcastComponent implements OnInit {
   public podcast: PodcastModel;

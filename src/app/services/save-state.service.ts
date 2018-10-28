@@ -97,6 +97,11 @@ export class SaveStateService {
     console.log(this.podcasts);
   }
 
+  reset() {
+    this.podcasts = [];
+    localStorage.clear();
+  }
+
   trackById(index: number, podcast: PodcastModel): string {
     return podcast.id;
   }

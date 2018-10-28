@@ -1,5 +1,6 @@
 import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
 import { UiService } from '../../services/ui.service';
+import { SaveStateService } from '../../services/save-state.service';
 
 @Component({
   selector: 'app-nav-buttons',
@@ -13,7 +14,10 @@ export class NavButtonsComponent implements OnInit {
     // tslint:disable-next-line:max-line-length
     /(https?:\/\/(?:www\.|(?!www))[a-zA-Z0-9][a-zA-Z0-9-]+[a-zA-Z0-9]\.[^\s]{2,}|www\.[a-zA-Z0-9][a-zA-Z0-9-]+[a-zA-Z0-9]\.[^\s]{2,}|https?:\/\/(?:www\.|(?!www))[a-zA-Z0-9]\.[^\s]{2,}|www\.[a-zA-Z0-9]\.[^\s]{2,})/g
   );
-  constructor(public uiService: UiService) {}
+  constructor(
+    public uiService: UiService,
+    public saveState: SaveStateService
+  ) {}
 
   ngOnInit() {}
 

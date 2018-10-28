@@ -2,7 +2,11 @@ import 'zone.js/dist/zone-mix';
 import 'reflect-metadata';
 import '../polyfills';
 import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
+import {
+  NgModule,
+  CUSTOM_ELEMENTS_SCHEMA,
+  NO_ERRORS_SCHEMA
+} from '@angular/core';
 import { FormsModule } from '@angular/forms';
 
 import { HttpClientModule, HttpClient } from '@angular/common/http';
@@ -32,6 +36,7 @@ import { UnplayedComponent } from './components/unplayed/unplayed.component';
 import { DownloadedComponent } from './components/downloaded/downloaded.component';
 import { PlayerComponent } from './components/player/player.component';
 import { PlayerService } from './services/player.service';
+import { CommonModule } from '@angular/common';
 
 // AoT requires an exported function for factories
 export function HttpLoaderFactory(http: HttpClient) {
@@ -56,6 +61,7 @@ export function HttpLoaderFactory(http: HttpClient) {
   ],
   imports: [
     BrowserModule,
+    CommonModule,
     FormsModule,
     HttpClientModule,
     BrowserAnimationsModule,
@@ -70,6 +76,7 @@ export function HttpLoaderFactory(http: HttpClient) {
     })
   ],
   providers: [UiService, ElectronService, PlayerService],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
+  schemas: [CUSTOM_ELEMENTS_SCHEMA, NO_ERRORS_SCHEMA]
 })
 export class AppModule {}
