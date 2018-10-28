@@ -54,6 +54,7 @@
     "normalize.css": "^8.0.0",
     "underscore": "^1.9.1",
     "video.js": "^7.2.3",
+    "whiskers": "https://github.com/jp-penguin/whiskers.git",
     "xml2js": "^0.4.19"
   },
   "devDependencies": {
