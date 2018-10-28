@@ -23,6 +23,30 @@
 // }
 $gridWidth: 150px;
 
+@mixin modal($height, $width) {
+  display: inline-block;
+  > :last-child {
+    left: 0px;
+    top: 0;
+    position: absolute;
+    display: none;
+    align-content: center;
+    justify-content: center;
+    height: 100%;
+    width: 100%;
+    > * {
+      z-index: 1455;
+      height: $height;
+      width: $width;
+    }
+  }
+  &.show {
+    > :last-child {
+      display: grid;
+    }
+  }
+}
+
 @mixin galleryGrid($minWidth, $maxWidth, $width) {
   @media (min-width: $minWidth) and (max-width: $maxWidth) {
     grid-template-columns: repeat(auto-fit, $width);
@@ -37,6 +61,10 @@ $gridWidth: 150px;
       height: $width;
     }
   }
+}
+
+.dropdown-menu {
+  @include modal(250px, 300px);
 }
 
 .gallery {
