@@ -3,19 +3,13 @@
     <h1>Podcasts</h1>
     <span>
       <button class="btn btn-primary btn-lg">Sort</button>
-      <div class="modal" d-m="1" #dropdown>
+      <div class="modal-parent" d-m="1" #dropdown>
         <button class="btn btn-primary" (click)="dropdownClick('1')">Feed</button>
-        <div (click)="overlayClick('1', $event)" class="dropdown" aria-labelledby="btnGroupDrop3" x-placement="bottom-start">
+        <div (click)="overlayClick('1', $event)" class="dropdown modal" aria-labelledby="btnGroupDrop3" x-placement="bottom-start">
           <!-- <div style="height: 100%; width: 100%;"></div> -->
-          <div>
-
-          </div>
-          <a class="dropdown-item" href="#">Dropdown link</a>
-          <a class="dropdown-item" href="#">Dropdown link</a>
-          <a class="dropdown-item" href="#">Dropdown link</a>
-          <a class="dropdown-item" href="#">Dropdown link</a>
-          <a class="dropdown-item" href="#">Dropdown link</a>
-          <a class="dropdown-item" href="#">Dropdown link</a>
+          <div></div>
+          <div></div>
+          <div><button>Okay</button><button>Cancel</button></div>
         </div>
       </div>
       <button class="btn btn-danger btn-sm">Sync</button>
