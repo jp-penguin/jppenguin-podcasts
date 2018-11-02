@@ -34,6 +34,8 @@ export class PodcastsComponent implements OnInit {
         ((a as ElementRef).nativeElement as Element).getAttribute('d-m') === x
       );
     });
+    console.log(temp);
+    
     console.log((temp.nativeElement as Element).classList.add('show'));
   }
   overlayClick(x: string, event: Event) {
