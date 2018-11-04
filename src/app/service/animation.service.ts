@@ -7,11 +7,17 @@ export class AnimationService {
   constructor() {}
 
   private animateCSS: string[] = [
+    'slow',
+    'slower',
+    'fast',
+    'faster',
+    'infinite',
     'bounce',
     'flash',
     'pulse',
     'rubberBand',
     'shake',
+    'infinite',
     'headShake',
     'swing',
     'tada',
@@ -88,800 +94,576 @@ export class AnimationService {
 
   public fadeIn(
     nativeElement: ElementRef,
-    infinite: boolean = false,
+    duration: AnimcationDuration = AnimcationDuration.default,
     delay: number = 0
   ): Promise<number> {
-    return new Promise<number>((resolve: (duration: number) => void, reject: () => void) => {
-      this.addClass(nativeElement, ['fadeIn'], infinite, delay);
-      resolve(1);
-    });
+    return this.addClass(nativeElement, ['fadeIn'], duration, delay);
   }
 
   public bounce(
     nativeElement: ElementRef,
-    infinite: boolean = false,
+    duration: AnimcationDuration = AnimcationDuration.default,
     delay: number = 0
   ): Promise<number> {
-    return new Promise<number>((resolve: (duration: number) => void, reject: () => void) => {
-      this.addClass(nativeElement, ['bounce'], infinite, delay);
-      resolve(1);
-    });
+    return this.addClass(nativeElement, ['bounce'], duration, delay);
   }
   public flash(
     nativeElement: ElementRef,
-    infinite: boolean = false,
+    duration: AnimcationDuration = AnimcationDuration.default,
     delay: number = 0
   ): Promise<number> {
-    return new Promise<number>((resolve: (duration: number) => void, reject: () => void) => {
-      this.addClass(nativeElement, ['flash'], infinite, delay);
-      resolve(1);
-    });
+    return this.addClass(nativeElement, ['flash'], duration, delay);
   }
   public pulse(
     nativeElement: ElementRef,
-    infinite: boolean = false,
+    duration: AnimcationDuration = AnimcationDuration.default,
     delay: number = 0
   ): Promise<number> {
-    return new Promise<number>((resolve: (duration: number) => void, reject: () => void) => {
-      this.addClass(nativeElement, ['pulse'], infinite, delay);
-      resolve(1);
-    });
+    return this.addClass(nativeElement, ['pulse'], duration, delay);
   }
   public rubberBand(
     nativeElement: ElementRef,
-    infinite: boolean = false,
+    duration: AnimcationDuration = AnimcationDuration.default,
     delay: number = 0
   ): Promise<number> {
-    return new Promise<number>((resolve: (duration: number) => void, reject: () => void) => {
-      this.addClass(nativeElement, ['rubberBand'], infinite, delay);
-      resolve(1);
-    });
+    return this.addClass(nativeElement, ['rubberBand'], duration, delay);
   }
   public shake(
     nativeElement: ElementRef,
-    infinite: boolean = false,
+    duration: AnimcationDuration = AnimcationDuration.default,
     delay: number = 0
   ): Promise<number> {
-    return new Promise<number>((resolve: (duration: number) => void, reject: () => void) => {
-      this.addClass(nativeElement, ['shake'], infinite, delay);
-      resolve(1);
-    });
+    return this.addClass(nativeElement, ['shake'], duration, delay);
   }
   public headShake(
     nativeElement: ElementRef,
-    infinite: boolean = false,
+    duration: AnimcationDuration = AnimcationDuration.default,
     delay: number = 0
   ): Promise<number> {
-    return new Promise<number>((resolve: (duration: number) => void, reject: () => void) => {
-      this.addClass(nativeElement, ['headShake'], infinite, delay);
-      resolve(1);
-    });
+    return this.addClass(nativeElement, ['headShake'], duration, delay);
   }
   public swing(
     nativeElement: ElementRef,
-    infinite: boolean = false,
+    duration: AnimcationDuration = AnimcationDuration.default,
     delay: number = 0
   ): Promise<number> {
-    return new Promise<number>((resolve: (duration: number) => void, reject: () => void) => {
-      this.addClass(nativeElement, ['swing'], infinite, delay);
-      resolve(1);
-    });
+    return this.addClass(nativeElement, ['swing'], duration, delay);
   }
   public tada(
     nativeElement: ElementRef,
-    infinite: boolean = false,
+    duration: AnimcationDuration = AnimcationDuration.default,
     delay: number = 0
   ): Promise<number> {
-    return new Promise<number>((resolve: (duration: number) => void, reject: () => void) => {
-      this.addClass(nativeElement, ['tada'], infinite, delay);
-      resolve(1);
-    });
+    return this.addClass(nativeElement, ['tada'], duration, delay);
   }
   public wobble(
     nativeElement: ElementRef,
-    infinite: boolean = false,
+    duration: AnimcationDuration = AnimcationDuration.default,
     delay: number = 0
   ): Promise<number> {
-    return new Promise<number>((resolve: (duration: number) => void, reject: () => void) => {
-      this.addClass(nativeElement, ['wobble'], infinite, delay);
-      resolve(1);
-    });
+    return this.addClass(nativeElement, ['wobble'], duration, delay);
   }
   public jello(
     nativeElement: ElementRef,
-    infinite: boolean = false,
+    duration: AnimcationDuration = AnimcationDuration.default,
     delay: number = 0
   ): Promise<number> {
-    return new Promise<number>((resolve: (duration: number) => void, reject: () => void) => {
-      this.addClass(nativeElement, ['jello'], infinite, delay);
-      resolve(1);
-    });
+    return this.addClass(nativeElement, ['jello'], duration, delay);
   }
   public bounceIn(
     nativeElement: ElementRef,
-    infinite: boolean = false,
+    duration: AnimcationDuration = AnimcationDuration.default,
     delay: number = 0
   ): Promise<number> {
-    return new Promise<number>((resolve: (duration: number) => void, reject: () => void) => {
-      this.addClass(nativeElement, ['bounceIn'], infinite, delay);
-      resolve(1);
-    });
+    return this.addClass(nativeElement, ['bounceIn'], duration, delay);
   }
   public bounceInDown(
     nativeElement: ElementRef,
-    infinite: boolean = false,
+    duration: AnimcationDuration = AnimcationDuration.default,
     delay: number = 0
   ): Promise<number> {
-    return new Promise<number>((resolve: (duration: number) => void, reject: () => void) => {
-      this.addClass(nativeElement, ['bounceInDown'], infinite, delay);
-      resolve(1);
-    });
+    return this.addClass(nativeElement, ['bounceInDown'], duration, delay);
   }
   public bounceInLeft(
     nativeElement: ElementRef,
-    infinite: boolean = false,
+    duration: AnimcationDuration = AnimcationDuration.default,
     delay: number = 0
   ): Promise<number> {
-    return new Promise<number>((resolve: (duration: number) => void, reject: () => void) => {
-      this.addClass(nativeElement, ['bounceInLeft'], infinite, delay);
-      resolve(1);
-    });
+    return this.addClass(nativeElement, ['bounceInLeft'], duration, delay);
   }
   public bounceInRight(
     nativeElement: ElementRef,
-    infinite: boolean = false,
+    duration: AnimcationDuration = AnimcationDuration.default,
     delay: number = 0
   ): Promise<number> {
-    return new Promise<number>((resolve: (duration: number) => void, reject: () => void) => {
-      this.addClass(nativeElement, ['bounceInRight'], infinite, delay);
-      resolve(1);
-    });
+    return this.addClass(nativeElement, ['bounceInRight'], duration, delay);
   }
   public bounceInUp(
     nativeElement: ElementRef,
-    infinite: boolean = false,
+    duration: AnimcationDuration = AnimcationDuration.default,
     delay: number = 0
   ): Promise<number> {
-    return new Promise<number>((resolve: (duration: number) => void, reject: () => void) => {
-      this.addClass(nativeElement, ['bounceInUp'], infinite, delay);
-      resolve(1);
-    });
+    return this.addClass(nativeElement, ['bounceInUp'], duration, delay);
   }
   public bounceOut(
     nativeElement: ElementRef,
-    infinite: boolean = false,
+    duration: AnimcationDuration = AnimcationDuration.default,
     delay: number = 0
   ): Promise<number> {
-    return new Promise<number>((resolve: (duration: number) => void, reject: () => void) => {
-      this.addClass(nativeElement, ['bounceOut'], infinite, delay);
-      resolve(1);
-    });
+    return this.addClass(nativeElement, ['bounceOut'], duration, delay);
   }
   public bounceOutDown(
     nativeElement: ElementRef,
-    infinite: boolean = false,
+    duration: AnimcationDuration = AnimcationDuration.default,
     delay: number = 0
   ): Promise<number> {
-    return new Promise<number>((resolve: (duration: number) => void, reject: () => void) => {
-      this.addClass(nativeElement, ['bounceOutDown'], infinite, delay);
-      resolve(1);
-    });
+    return this.addClass(nativeElement, ['bounceOutDown'], duration, delay);
   }
   public bounceOutLeft(
     nativeElement: ElementRef,
-    infinite: boolean = false,
+    duration: AnimcationDuration = AnimcationDuration.default,
     delay: number = 0
   ): Promise<number> {
-    return new Promise<number>((resolve: (duration: number) => void, reject: () => void) => {
-      this.addClass(nativeElement, ['bounceOutLeft'], infinite, delay);
-      resolve(1);
-    });
+    return this.addClass(nativeElement, ['bounceOutLeft'], duration, delay);
   }
   public bounceOutRight(
     nativeElement: ElementRef,
-    infinite: boolean = false,
+    duration: AnimcationDuration = AnimcationDuration.default,
     delay: number = 0
   ): Promise<number> {
-    return new Promise<number>((resolve: (duration: number) => void, reject: () => void) => {
-      this.addClass(nativeElement, ['bounceOutRight'], infinite, delay);
-      resolve(1);
-    });
+    return this.addClass(nativeElement, ['bounceOutRight'], duration, delay);
   }
   public bounceOutUp(
     nativeElement: ElementRef,
-    infinite: boolean = false,
+    duration: AnimcationDuration = AnimcationDuration.default,
     delay: number = 0
   ): Promise<number> {
-    return new Promise<number>((resolve: (duration: number) => void, reject: () => void) => {
-      this.addClass(nativeElement, ['bounceOutUp'], infinite, delay);
-      resolve(1);
-    });
+    return this.addClass(nativeElement, ['bounceOutUp'], duration, delay);
   }
   public fadeInDown(
     nativeElement: ElementRef,
-    infinite: boolean = false,
+    duration: AnimcationDuration = AnimcationDuration.default,
     delay: number = 0
   ): Promise<number> {
-    return new Promise<number>((resolve: (duration: number) => void, reject: () => void) => {
-      this.addClass(nativeElement, ['fadeInDown'], infinite, delay);
-      resolve(1);
-    });
+    return this.addClass(nativeElement, ['fadeInDown'], duration, delay);
   }
   public fadeInDownBig(
     nativeElement: ElementRef,
-    infinite: boolean = false,
+    duration: AnimcationDuration = AnimcationDuration.default,
     delay: number = 0
   ): Promise<number> {
-    return new Promise<number>((resolve: (duration: number) => void, reject: () => void) => {
-      this.addClass(nativeElement, ['fadeInDownBig'], infinite, delay);
-      resolve(1);
-    });
+    return this.addClass(nativeElement, ['fadeInDownBig'], duration, delay);
   }
   public fadeInLeft(
     nativeElement: ElementRef,
-    infinite: boolean = false,
+    duration: AnimcationDuration = AnimcationDuration.default,
     delay: number = 0
   ): Promise<number> {
-    return new Promise<number>((resolve: (duration: number) => void, reject: () => void) => {
-      this.addClass(nativeElement, ['fadeInLeft'], infinite, delay);
-      resolve(1);
-    });
+    return this.addClass(nativeElement, ['fadeInLeft'], duration, delay);
   }
   public fadeInLeftBig(
     nativeElement: ElementRef,
-    infinite: boolean = false,
+    duration: AnimcationDuration = AnimcationDuration.default,
     delay: number = 0
   ): Promise<number> {
-    return new Promise<number>((resolve: (duration: number) => void, reject: () => void) => {
-      this.addClass(nativeElement, ['fadeInLeftBig'], infinite, delay);
-      resolve(1);
-    });
+    return this.addClass(nativeElement, ['fadeInLeftBig'], duration, delay);
   }
   public fadeInRight(
     nativeElement: ElementRef,
-    infinite: boolean = false,
+    duration: AnimcationDuration = AnimcationDuration.default,
     delay: number = 0
   ): Promise<number> {
-    return new Promise<number>((resolve: (duration: number) => void, reject: () => void) => {
-      this.addClass(nativeElement, ['fadeInRight'], infinite, delay);
-      resolve(1);
-    });
+    return this.addClass(nativeElement, ['fadeInRight'], duration, delay);
   }
   public fadeInRightBig(
     nativeElement: ElementRef,
-    infinite: boolean = false,
+    duration: AnimcationDuration = AnimcationDuration.default,
     delay: number = 0
   ): Promise<number> {
-    return new Promise<number>((resolve: (duration: number) => void, reject: () => void) => {
-      this.addClass(nativeElement, ['fadeInRightBig'], infinite, delay);
-      resolve(1);
-    });
+    return this.addClass(nativeElement, ['fadeInRightBig'], duration, delay);
   }
   public fadeInUp(
     nativeElement: ElementRef,
-    infinite: boolean = false,
+    duration: AnimcationDuration = AnimcationDuration.default,
     delay: number = 0
   ): Promise<number> {
-    return new Promise<number>((resolve: (duration: number) => void, reject: () => void) => {
-      this.addClass(nativeElement, ['fadeInUp'], infinite, delay);
-      resolve(1);
-    });
+    return this.addClass(nativeElement, ['fadeInUp'], duration, delay);
   }
   public fadeInUpBig(
     nativeElement: ElementRef,
-    infinite: boolean = false,
+    duration: AnimcationDuration = AnimcationDuration.default,
     delay: number = 0
   ): Promise<number> {
-    return new Promise<number>((resolve: (duration: number) => void, reject: () => void) => {
-      this.addClass(nativeElement, ['fadeInUpBig'], infinite, delay);
-      resolve(1);
-    });
+    return this.addClass(nativeElement, ['fadeInUpBig'], duration, delay);
   }
   public fadeOut(
     nativeElement: ElementRef,
-    infinite: boolean = false,
+    duration: AnimcationDuration = AnimcationDuration.default,
     delay: number = 0
   ): Promise<number> {
-    return new Promise<number>((resolve: (duration: number) => void, reject: () => void) => {
-      this.addClass(nativeElement, ['fadeOut'], infinite, delay);
-      resolve(1);
-    });
+    return this.addClass(nativeElement, ['fadeOut'], duration, delay);
   }
   public fadeOutDown(
     nativeElement: ElementRef,
-    infinite: boolean = false,
+    duration: AnimcationDuration = AnimcationDuration.default,
     delay: number = 0
   ): Promise<number> {
-    return new Promise<number>((resolve: (duration: number) => void, reject: () => void) => {
-      this.addClass(nativeElement, ['fadeOutDown'], infinite, delay);
-      resolve(1);
-    });
+    return this.addClass(nativeElement, ['fadeOutDown'], duration, delay);
   }
   public fadeOutDownBig(
     nativeElement: ElementRef,
-    infinite: boolean = false,
+    duration: AnimcationDuration = AnimcationDuration.default,
     delay: number = 0
   ): Promise<number> {
-    return new Promise<number>((resolve: (duration: number) => void, reject: () => void) => {
-      this.addClass(nativeElement, ['fadeOutDownBig'], infinite, delay);
-      resolve(1);
-    });
+    return this.addClass(nativeElement, ['fadeOutDownBig'], duration, delay);
   }
   public fadeOutLeft(
     nativeElement: ElementRef,
-    infinite: boolean = false,
+    duration: AnimcationDuration = AnimcationDuration.default,
     delay: number = 0
   ): Promise<number> {
-    return new Promise<number>((resolve: (duration: number) => void, reject: () => void) => {
-      this.addClass(nativeElement, ['fadeOutLeft'], infinite, delay);
-      resolve(1);
-    });
+    return this.addClass(nativeElement, ['fadeOutLeft'], duration, delay);
   }
   public fadeOutLeftBig(
     nativeElement: ElementRef,
-    infinite: boolean = false,
+    duration: AnimcationDuration = AnimcationDuration.default,
     delay: number = 0
   ): Promise<number> {
-    return new Promise<number>((resolve: (duration: number) => void, reject: () => void) => {
-      this.addClass(nativeElement, ['fadeOutLeftBig'], infinite, delay);
-      resolve(1);
-    });
+    return this.addClass(nativeElement, ['fadeOutLeftBig'], duration, delay);
   }
   public fadeOutRight(
     nativeElement: ElementRef,
-    infinite: boolean = false,
+    duration: AnimcationDuration = AnimcationDuration.default,
     delay: number = 0
   ): Promise<number> {
-    return new Promise<number>((resolve: (duration: number) => void, reject: () => void) => {
-      this.addClass(nativeElement, ['fadeOutRight'], infinite, delay);
-      resolve(1);
-    });
+    return this.addClass(nativeElement, ['fadeOutRight'], duration, delay);
   }
   public fadeOutRightBig(
     nativeElement: ElementRef,
-    infinite: boolean = false,
+    duration: AnimcationDuration = AnimcationDuration.default,
     delay: number = 0
   ): Promise<number> {
-    return new Promise<number>((resolve: (duration: number) => void, reject: () => void) => {
-      this.addClass(nativeElement, ['fadeOutRightBig'], infinite, delay);
-      resolve(1);
-    });
+    return this.addClass(nativeElement, ['fadeOutRightBig'], duration, delay);
   }
   public fadeOutUp(
     nativeElement: ElementRef,
-    infinite: boolean = false,
+    duration: AnimcationDuration = AnimcationDuration.default,
     delay: number = 0
   ): Promise<number> {
-    return new Promise<number>((resolve: (duration: number) => void, reject: () => void) => {
-      this.addClass(nativeElement, ['fadeOutUp'], infinite, delay);
-      resolve(1);
-    });
+    return this.addClass(nativeElement, ['fadeOutUp'], duration, delay);
   }
   public fadeOutUpBig(
     nativeElement: ElementRef,
-    infinite: boolean = false,
+    duration: AnimcationDuration = AnimcationDuration.default,
     delay: number = 0
   ): Promise<number> {
-    return new Promise<number>((resolve: (duration: number) => void, reject: () => void) => {
-      this.addClass(nativeElement, ['fadeOutUpBig'], infinite, delay);
-      resolve(1);
-    });
+    return this.addClass(nativeElement, ['fadeOutUpBig'], duration, delay);
   }
   public flipInX(
     nativeElement: ElementRef,
-    infinite: boolean = false,
+    duration: AnimcationDuration = AnimcationDuration.default,
     delay: number = 0
   ): Promise<number> {
-    return new Promise<number>((resolve: (duration: number) => void, reject: () => void) => {
-      this.addClass(nativeElement, ['flipInX'], infinite, delay);
-      resolve(1);
-    });
+    return this.addClass(nativeElement, ['flipInX'], duration, delay);
   }
   public flipInY(
     nativeElement: ElementRef,
-    infinite: boolean = false,
+    duration: AnimcationDuration = AnimcationDuration.default,
     delay: number = 0
   ): Promise<number> {
-    return new Promise<number>((resolve: (duration: number) => void, reject: () => void) => {
-      this.addClass(nativeElement, ['flipInY'], infinite, delay);
-      resolve(1);
-    });
+    return this.addClass(nativeElement, ['flipInY'], duration, delay);
   }
   public flipOutX(
     nativeElement: ElementRef,
-    infinite: boolean = false,
+    duration: AnimcationDuration = AnimcationDuration.default,
     delay: number = 0
   ): Promise<number> {
-    return new Promise<number>((resolve: (duration: number) => void, reject: () => void) => {
-      this.addClass(nativeElement, ['flipOutX'], infinite, delay);
-      resolve(1);
-    });
+    return this.addClass(nativeElement, ['flipOutX'], duration, delay);
   }
   public flipOutY(
     nativeElement: ElementRef,
-    infinite: boolean = false,
+    duration: AnimcationDuration = AnimcationDuration.default,
     delay: number = 0
   ): Promise<number> {
-    return new Promise<number>((resolve: (duration: number) => void, reject: () => void) => {
-      this.addClass(nativeElement, ['flipOutY'], infinite, delay);
-      resolve(1);
-    });
+    return this.addClass(nativeElement, ['flipOutY'], duration, delay);
   }
   public lightSpeedIn(
     nativeElement: ElementRef,
-    infinite: boolean = false,
+    duration: AnimcationDuration = AnimcationDuration.default,
     delay: number = 0
   ): Promise<number> {
-    return new Promise<number>((resolve: (duration: number) => void, reject: () => void) => {
-      this.addClass(nativeElement, ['lightSpeedIn'], infinite, delay);
-      resolve(1);
-    });
+    return this.addClass(nativeElement, ['lightSpeedIn'], duration, delay);
   }
   public lightSpeedOut(
     nativeElement: ElementRef,
-    infinite: boolean = false,
+    duration: AnimcationDuration = AnimcationDuration.default,
     delay: number = 0
   ): Promise<number> {
-    return new Promise<number>((resolve: (duration: number) => void, reject: () => void) => {
-      this.addClass(nativeElement, ['lightSpeedOut'], infinite, delay);
-      resolve(1);
-    });
+    return this.addClass(nativeElement, ['lightSpeedOut'], duration, delay);
   }
   public rotateIn(
     nativeElement: ElementRef,
-    infinite: boolean = false,
+    duration: AnimcationDuration = AnimcationDuration.default,
     delay: number = 0
   ): Promise<number> {
-    return new Promise<number>((resolve: (duration: number) => void, reject: () => void) => {
-      this.addClass(nativeElement, ['rotateIn'], infinite, delay);
-      resolve(1);
-    });
+    return this.addClass(nativeElement, ['rotateIn'], duration, delay);
   }
   public rotateInDownLeft(
     nativeElement: ElementRef,
-    infinite: boolean = false,
+    duration: AnimcationDuration = AnimcationDuration.default,
     delay: number = 0
   ): Promise<number> {
-    return new Promise<number>((resolve: (duration: number) => void, reject: () => void) => {
-      this.addClass(nativeElement, ['rotateInDownLeft'], infinite, delay);
-      resolve(1);
-    });
+    return this.addClass(nativeElement, ['rotateInDownLeft'], duration, delay);
   }
   public rotateInDownRight(
     nativeElement: ElementRef,
-    infinite: boolean = false,
+    duration: AnimcationDuration = AnimcationDuration.default,
     delay: number = 0
   ): Promise<number> {
-    return new Promise<number>((resolve: (duration: number) => void, reject: () => void) => {
-      this.addClass(nativeElement, ['rotateInDownRight'], infinite, delay);
-      resolve(1);
-    });
+    return this.addClass(nativeElement, ['rotateInDownRight'], duration, delay);
   }
   public rotateInUpLeft(
     nativeElement: ElementRef,
-    infinite: boolean = false,
+    duration: AnimcationDuration = AnimcationDuration.default,
     delay: number = 0
   ): Promise<number> {
-    return new Promise<number>((resolve: (duration: number) => void, reject: () => void) => {
-      this.addClass(nativeElement, ['rotateInUpLeft'], infinite, delay);
-      resolve(1);
-    });
+    return this.addClass(nativeElement, ['rotateInUpLeft'], duration, delay);
   }
   public rotateInUpRight(
     nativeElement: ElementRef,
-    infinite: boolean = false,
+    duration: AnimcationDuration = AnimcationDuration.default,
     delay: number = 0
   ): Promise<number> {
-    return new Promise<number>((resolve: (duration: number) => void, reject: () => void) => {
-      this.addClass(nativeElement, ['rotateInUpRight'], infinite, delay);
-      resolve(1);
-    });
+    return this.addClass(nativeElement, ['rotateInUpRight'], duration, delay);
   }
   public rotateOut(
     nativeElement: ElementRef,
-    infinite: boolean = false,
+    duration: AnimcationDuration = AnimcationDuration.default,
     delay: number = 0
   ): Promise<number> {
-    return new Promise<number>((resolve: (duration: number) => void, reject: () => void) => {
-      this.addClass(nativeElement, ['rotateOut'], infinite, delay);
-      resolve(1);
-    });
+    return this.addClass(nativeElement, ['rotateOut'], duration, delay);
   }
   public rotateOutDownLeft(
     nativeElement: ElementRef,
-    infinite: boolean = false,
+    duration: AnimcationDuration = AnimcationDuration.default,
     delay: number = 0
   ): Promise<number> {
-    return new Promise<number>((resolve: (duration: number) => void, reject: () => void) => {
-      this.addClass(nativeElement, ['rotateOutDownLeft'], infinite, delay);
-      resolve(1);
-    });
+    return this.addClass(nativeElement, ['rotateOutDownLeft'], duration, delay);
   }
   public rotateOutDownRight(
     nativeElement: ElementRef,
-    infinite: boolean = false,
+    duration: AnimcationDuration = AnimcationDuration.default,
     delay: number = 0
   ): Promise<number> {
-    return new Promise<number>((resolve: (duration: number) => void, reject: () => void) => {
-      this.addClass(nativeElement, ['rotateOutDownRight'], infinite, delay);
-      resolve(1);
-    });
+    return this.addClass(
+      nativeElement,
+      ['rotateOutDownRight'],
+      duration,
+      delay
+    );
   }
   public rotateOutUpLeft(
     nativeElement: ElementRef,
-    infinite: boolean = false,
+    duration: AnimcationDuration = AnimcationDuration.default,
     delay: number = 0
   ): Promise<number> {
-    return new Promise<number>((resolve: (duration: number) => void, reject: () => void) => {
-      this.addClass(nativeElement, ['rotateOutUpLeft'], infinite, delay);
-      resolve(1);
-    });
+    return this.addClass(nativeElement, ['rotateOutUpLeft'], duration, delay);
   }
   public rotateOutUpRight(
     nativeElement: ElementRef,
-    infinite: boolean = false,
+    duration: AnimcationDuration = AnimcationDuration.default,
     delay: number = 0
   ): Promise<number> {
-    return new Promise<number>((resolve: (duration: number) => void, reject: () => void) => {
-      this.addClass(nativeElement, ['rotateOutUpRight'], infinite, delay);
-      resolve(1);
-    });
+    return this.addClass(nativeElement, ['rotateOutUpRight'], duration, delay);
   }
   public hinge(
     nativeElement: ElementRef,
-    infinite: boolean = false,
+    duration: AnimcationDuration = AnimcationDuration.default,
     delay: number = 0
   ): Promise<number> {
-    return new Promise<number>((resolve: (duration: number) => void, reject: () => void) => {
-      this.addClass(nativeElement, ['hinge'], infinite, delay);
-      resolve(1);
-    });
+    return this.addClass(nativeElement, ['hinge'], duration, delay);
   }
   public jackInTheBox(
     nativeElement: ElementRef,
-    infinite: boolean = false,
+    duration: AnimcationDuration = AnimcationDuration.default,
     delay: number = 0
   ): Promise<number> {
-    return new Promise<number>((resolve: (duration: number) => void, reject: () => void) => {
-      this.addClass(nativeElement, ['jackInTheBox'], infinite, delay);
-      resolve(1);
-    });
+    return this.addClass(nativeElement, ['jackInTheBox'], duration, delay);
   }
   public rollIn(
     nativeElement: ElementRef,
-    infinite: boolean = false,
+    duration: AnimcationDuration = AnimcationDuration.default,
     delay: number = 0
   ): Promise<number> {
-    return new Promise<number>((resolve: (duration: number) => void, reject: () => void) => {
-      this.addClass(nativeElement, ['rollIn'], infinite, delay);
-      resolve(1);
-    });
+    return this.addClass(nativeElement, ['rollIn'], duration, delay);
   }
   public rollOut(
     nativeElement: ElementRef,
-    infinite: boolean = false,
+    duration: AnimcationDuration = AnimcationDuration.default,
     delay: number = 0
   ): Promise<number> {
-    return new Promise<number>((resolve: (duration: number) => void, reject: () => void) => {
-      this.addClass(nativeElement, ['rollOut'], infinite, delay);
-      resolve(1);
-    });
+    return this.addClass(nativeElement, ['rollOut'], duration, delay);
   }
   public zoomIn(
     nativeElement: ElementRef,
-    infinite: boolean = false,
+    duration: AnimcationDuration = AnimcationDuration.default,
     delay: number = 0
   ): Promise<number> {
-    return new Promise<number>((resolve: (duration: number) => void, reject: () => void) => {
-      this.addClass(nativeElement, ['zoomIn'], infinite, delay);
-      resolve(1);
-    });
+    return this.addClass(nativeElement, ['zoomIn'], duration, delay);
   }
   public zoomInDown(
     nativeElement: ElementRef,
-    infinite: boolean = false,
+    duration: AnimcationDuration = AnimcationDuration.default,
     delay: number = 0
   ): Promise<number> {
-    return new Promise<number>((resolve: (duration: number) => void, reject: () => void) => {
-      this.addClass(nativeElement, ['zoomInDown'], infinite, delay);
-      resolve(1);
-    });
+    return this.addClass(nativeElement, ['zoomInDown'], duration, delay);
   }
   public zoomInLeft(
     nativeElement: ElementRef,
-    infinite: boolean = false,
+    duration: AnimcationDuration = AnimcationDuration.default,
     delay: number = 0
   ): Promise<number> {
-    return new Promise<number>((resolve: (duration: number) => void, reject: () => void) => {
-      this.addClass(nativeElement, ['zoomInLeft'], infinite, delay);
-      resolve(1);
-    });
+    return this.addClass(nativeElement, ['zoomInLeft'], duration, delay);
   }
   public zoomInRight(
     nativeElement: ElementRef,
-    infinite: boolean = false,
+    duration: AnimcationDuration = AnimcationDuration.default,
     delay: number = 0
   ): Promise<number> {
-    return new Promise<number>((resolve: (duration: number) => void, reject: () => void) => {
-      this.addClass(nativeElement, ['zoomInRight'], infinite, delay);
-      resolve(1);
-    });
+    return this.addClass(nativeElement, ['zoomInRight'], duration, delay);
   }
   public zoomInUp(
     nativeElement: ElementRef,
-    infinite: boolean = false,
+    duration: AnimcationDuration = AnimcationDuration.default,
     delay: number = 0
   ): Promise<number> {
-    return new Promise<number>((resolve: (duration: number) => void, reject: () => void) => {
-      this.addClass(nativeElement, ['zoomInUp'], infinite, delay);
-      resolve(1);
-    });
+    return this.addClass(nativeElement, ['zoomInUp'], duration, delay);
   }
   public zoomOut(
     nativeElement: ElementRef,
-    infinite: boolean = false,
+    duration: AnimcationDuration = AnimcationDuration.default,
     delay: number = 0
   ): Promise<number> {
-    return new Promise<number>((resolve: (duration: number) => void, reject: () => void) => {
-      this.addClass(nativeElement, ['zoomOut'], infinite, delay);
-      resolve(1);
-    });
+    return this.addClass(nativeElement, ['zoomOut'], duration, delay);
   }
   public zoomOutDown(
     nativeElement: ElementRef,
-    infinite: boolean = false,
+    duration: AnimcationDuration = AnimcationDuration.default,
     delay: number = 0
   ): Promise<number> {
-    return new Promise<number>((resolve: (duration: number) => void, reject: () => void) => {
-      this.addClass(nativeElement, ['zoomOutDown'], infinite, delay);
-      resolve(1);
-    });
+    return this.addClass(nativeElement, ['zoomOutDown'], duration, delay);
   }
   public zoomOutLeft(
     nativeElement: ElementRef,
-    infinite: boolean = false,
+    duration: AnimcationDuration = AnimcationDuration.default,
     delay: number = 0
   ): Promise<number> {
-    return new Promise<number>((resolve: (duration: number) => void, reject: () => void) => {
-      this.addClass(nativeElement, ['zoomOutLeft'], infinite, delay);
-      resolve(1);
-    });
+    return this.addClass(nativeElement, ['zoomOutLeft'], duration, delay);
   }
   public zoomOutRight(
     nativeElement: ElementRef,
-    infinite: boolean = false,
+    duration: AnimcationDuration = AnimcationDuration.default,
     delay: number = 0
   ): Promise<number> {
-    return new Promise<number>((resolve: (duration: number) => void, reject: () => void) => {
-      this.addClass(nativeElement, ['zoomOutRight'], infinite, delay);
-      resolve(1);
-    });
+    return this.addClass(nativeElement, ['zoomOutRight'], duration, delay);
   }
   public zoomOutUp(
     nativeElement: ElementRef,
-    infinite: boolean = false,
+    duration: AnimcationDuration = AnimcationDuration.default,
     delay: number = 0
   ): Promise<number> {
-    return new Promise<number>((resolve: (duration: number) => void, reject: () => void) => {
-      this.addClass(nativeElement, ['zoomOutUp'], infinite, delay);
-      resolve(1);
-    });
+    return this.addClass(nativeElement, ['zoomOutUp'], duration, delay);
   }
   public slideInDown(
     nativeElement: ElementRef,
-    infinite: boolean = false,
+    duration: AnimcationDuration = AnimcationDuration.default,
     delay: number = 0
   ): Promise<number> {
-    return new Promise<number>((resolve: (duration: number) => void, reject: () => void) => {
-      this.addClass(nativeElement, ['slideInDown'], infinite, delay);
-      resolve(1);
-    });
+    return this.addClass(nativeElement, ['slideInDown'], duration, delay);
   }
   public slideInLeft(
     nativeElement: ElementRef,
-    infinite: boolean = false,
+    duration: AnimcationDuration = AnimcationDuration.default,
     delay: number = 0
   ): Promise<number> {
-    return new Promise<number>((resolve: (duration: number) => void, reject: () => void) => {
-      this.addClass(nativeElement, ['slideInLeft'], infinite, delay);
-      resolve(1);
-    });
+    return this.addClass(nativeElement, ['slideInLeft'], duration, delay);
   }
   public slideInRight(
     nativeElement: ElementRef,
-    infinite: boolean = false,
+    duration: AnimcationDuration = AnimcationDuration.default,
     delay: number = 0
   ): Promise<number> {
-    return new Promise<number>((resolve: (duration: number) => void, reject: () => void) => {
-      this.addClass(nativeElement, ['slideInRight'], infinite, delay);
-      resolve(1);
-    });
+    return this.addClass(nativeElement, ['slideInRight'], duration, delay);
   }
   public slideInUp(
     nativeElement: ElementRef,
-    infinite: boolean = false,
+    duration: AnimcationDuration = AnimcationDuration.default,
     delay: number = 0
   ): Promise<number> {
-    return new Promise<number>((resolve: (duration: number) => void, reject: () => void) => {
-      this.addClass(nativeElement, ['slideInUp'], infinite, delay);
-      resolve(1);
-    });
+    return this.addClass(nativeElement, ['slideInUp'], duration, delay);
   }
+
   public slideOutDown(
     nativeElement: ElementRef,
-    infinite: boolean = false,
+    duration: AnimcationDuration = AnimcationDuration.default,
     delay: number = 0
   ): Promise<number> {
-    return new Promise<number>((resolve: (duration: number) => void, reject: () => void) => {
-      this.addClass(nativeElement, ['slideOutDown'], infinite, delay);
-      resolve(1);
-    });
+    return this.addClass(nativeElement, ['slideOutDown'], duration, delay);
   }
   public slideOutLeft(
     nativeElement: ElementRef,
-    infinite: boolean = false,
+    duration: AnimcationDuration = AnimcationDuration.default,
     delay: number = 0
   ): Promise<number> {
-    return new Promise<number>((resolve: (duration: number) => void, reject: () => void) => {
-      this.addClass(nativeElement, ['slideOutLeft'], infinite, delay);
-      resolve(1);
-    });
+    return this.addClass(nativeElement, ['slideOutLeft'], duration, delay);
   }
   public slideOutRight(
     nativeElement: ElementRef,
-    infinite: boolean = false,
+    duration: AnimcationDuration = AnimcationDuration.default,
     delay: number = 0
   ): Promise<number> {
-    return new Promise<number>((resolve: (duration: number) => void, reject: () => void) => {
-      this.addClass(nativeElement, ['slideOutRight'], infinite, delay);
-      resolve(1);
-    });
+    return this.addClass(nativeElement, ['slideOutRight'], duration, delay);
   }
   public slideOutUp(
     nativeElement: ElementRef,
-    infinite: boolean = false,
+    duration: AnimcationDuration = AnimcationDuration.default,
     delay: number = 0
   ): Promise<number> {
-    return new Promise<number>((resolve: (duration: number) => void, reject: () => void) => {
-      this.addClass(nativeElement, ['slideOutUp'], infinite, delay);
-      resolve(1);
-    });
+    return this.addClass(nativeElement, ['slideOutUp'], duration, delay);
   }
   public heartBeat(
     nativeElement: ElementRef,
-    infinite: boolean = false,
+    duration: AnimcationDuration = AnimcationDuration.default,
     delay: number = 0
   ): Promise<number> {
-    return new Promise<number>((resolve: (duration: number) => void, reject: () => void) => {
-      this.addClass(nativeElement, ['heartBeat'], infinite, delay);
-      resolve(1);
-    });
+    return this.addClass(nativeElement, ['heartBeat'], duration, delay);
   }
 
   private addClass(
     elementRef: ElementRef,
     classList: string[],
-    infinite: boolean,
+    duration: AnimcationDuration,
     delay: number
   ): Promise<number> {
-    return new Promise<number>((resolve: (duration: number) => void, reject: () => void) => {
-      const element = elementRef.nativeElement as Element;
-      classList.push('animated');
-      if (infinite) {
-        classList.push('infinite');
+    return new Promise<number>(
+      (resolve: (duration: number) => void, reject: () => void) => {
+        const element = elementRef.nativeElement as Element;
+        classList.push('animated');
+
+        classList.push(this.dur(duration));
+        if (delay > 0 && delay <= 5) {
+          classList.push(delay + 's');
+        }
+
+        this.removeAnimateCss(element);
+
+        classList.forEach(c => {
+          element.classList.add(c);
+        });
+
+        resolve(AnimcationDuration.default);
       }
-
-      if (delay > 0 && delay <= 5) {
-        classList.push(delay + 's');
-      }
-
-      this.removeAnimateCss(element);
-
-      classList.forEach(c => {
-        element.classList.add(c);
-      });
-      resolve(1);
-    });
+    );
   }
 
   private removeAnimateCss(element: Element): void {
@@ -889,4 +671,36 @@ export class AnimationService {
       element.classList.remove(klass);
     });
   }
+
+  private dur(duration: AnimcationDuration): string {
+    switch (duration) {
+      case AnimcationDuration.slow: {
+        return 'slow';
+      }
+      case AnimcationDuration.slower: {
+        return 'slower';
+      }
+      case AnimcationDuration.fast: {
+        return 'fast';
+      }
+      case AnimcationDuration.faster: {
+        return 'faster';
+      }
+      case AnimcationDuration.infinite: {
+        return 'infinite';
+      }
+      default: {
+        return 'animated';
+      }
+    }
+  }
+}
+
+export enum AnimcationDuration {
+  default = 1000,
+  slow = 2000,
+  slower = 3000,
+  fast = 800,
+  faster = 500,
+  infinite = 86400000
 }

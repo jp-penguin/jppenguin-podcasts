@@ -4,7 +4,7 @@
     <span>
       <button class="btn btn-primary btn-lg">Sort</button>
       <div class="modal-parent modal" d-m="1" #dropdown>
-        <button class="btn btn-primary" (click)="dropdownClick('1')">Feed</button>
+        <button class="btn btn-primary" (click)="dropdownClick('1')" [disabled]="overlayDisabled">Feed</button>
         <div (click)="overlayClick('1', $event)" class="dropdown l" aria-labelledby="btnGroupDrop3" x-placement="bottom-start"
           #overlay>
           <!-- <div style="height: 100%; width: 100%;"></div> -->

@@ -10,7 +10,10 @@ import { SaveStateService } from '../../services/save-state.service';
 import { Router } from '@angular/router';
 import { UiService } from '../../services/ui.service';
 import * as lodash from 'lodash';
-import { AnimationService } from '../../service/animation.service';
+import {
+  AnimationService,
+  AnimcationDuration
+} from '../../service/animation.service';
 
 @Component({
   selector: 'app-podcasts',
@@ -20,6 +23,7 @@ import { AnimationService } from '../../service/animation.service';
 export class PodcastsComponent implements OnInit {
   @ViewChildren('dropdown')
   dropdowns!: QueryList<ElementRef>;
+  overlayDisabled = false;
   @ViewChild('overlay')
   overlay!: ElementRef;
   constructor(
@@ -43,7 +47,7 @@ export class PodcastsComponent implements OnInit {
 
     console.log((temp.nativeElement as Element).classList.add('show'));
     // (this.overlay.nativeElement as Element).classList.add('animated', 'fadeIn');
-    this.animationService.bounceIn(this.overlay);
+    this.animationService.fadeIn(this.overlay, AnimcationDuration.faster);
   }
   overlayClick(x: string, event: Event) {
     console.log();
@@ -57,13 +61,17 @@ export class PodcastsComponent implements OnInit {
         );
       });
 
-      this.animationService.fadeOut(this.overlay).then((duration: number) => {
-        console.log(duration);
+      this.animationService
+        .fadeOut(this.overlay, AnimcationDuration.faster)
+        .then((duration: AnimcationDuration) => {
+          console.log(duration);
 
-        setTimeout(() => {
-          console.log((temp.nativeElement as Element).classList.remove('show'));
-        }, duration * 1000);
-      });
+          setTimeout(() => {
+            console.log(
+              (temp.nativeElement as Element).classList.remove('show')
+            );
+          }, duration);
+        });
     }
   }
 
