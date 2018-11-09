@@ -10,8 +10,12 @@ import { PlayerService } from '../../services/player.service';
 export class PlayerComponent implements OnInit {
   constructor(
     private uiService: UiService,
-    private playerService: PlayerService
+    public playerService: PlayerService
   ) {}
 
   ngOnInit() {}
+  audioChange(e: Event) {
+    const range = e.srcElement;
+    console.log(range);
+  }
 }

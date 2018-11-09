@@ -17,6 +17,7 @@ export class PodcastEpisodeModel {
   public playing = false;
   public currentTime: number;
   public duration: string;
+  public durationActual = 0;
 
   constructor(item: Element) {
     this.author = (item.querySelector('author') as HTMLElement).innerHTML;

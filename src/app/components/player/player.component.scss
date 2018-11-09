@@ -16,11 +16,18 @@
   .controls {
     display: grid;
     grid-template-rows: 48px 48px;
-    background: rgb(184, 32, 151);
+    color: #375a7f;
     > * {
       display: grid;
-      grid-template-columns: 48px 48px 48px 48px 48px;
+      grid-column-gap: 5px;
       justify-content: center; // background-color: gray;
+      align-content: center;
+    }
+    .controls-top {
+      grid-template-columns: repeat(5, 48px);
+    }
+    .controls-bottom {
+      grid-template-columns: repeat(3, auto);
     }
   }
   .speaker {
@@ -36,7 +43,7 @@
       height: 36px;
       width: 36px;
       // background: ;
-      color: white;
+      fill: #375a7f;
       // colo
     }
   }

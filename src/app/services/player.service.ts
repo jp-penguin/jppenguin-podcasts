@@ -9,6 +9,7 @@ import * as lodash from 'lodash';
   providedIn: 'root'
 })
 export class PlayerService {
+  public minMaxValue = [0, 100, 0];
   public podcastEpisode: PodcastEpisodeModel;
   public audioPlayer = new Audio();
   constructor(private saveState: SaveStateService) {
@@ -16,6 +17,7 @@ export class PlayerService {
     //   this.timeUpdate();
     // });
     this.audioPlayer.addEventListener('timeupdate', () => {
+      this.podcastEpisode.durationActual = this.audioPlayer.duration;
       this.timeUpdate();
     });
     // this.audioPlayer.addEventListener('timeupdate', this.timeUpdate);
