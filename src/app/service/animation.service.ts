@@ -11,6 +11,7 @@ export class AnimationService {
     'slower',
     'fast',
     'faster',
+    'fastest',
     'infinite',
     'bounce',
     'flash',
@@ -666,8 +667,10 @@ export class AnimationService {
     );
   }
 
-  private removeAnimateCss(element: Element): void {
+  public removeAnimateCss(element: Element): void {
     this.animateCSS.forEach(klass => {
+      console.log(klass);
+
       element.classList.remove(klass);
     });
   }
@@ -686,6 +689,9 @@ export class AnimationService {
       case AnimcationDuration.faster: {
         return 'faster';
       }
+      case AnimcationDuration.fastest: {
+        return 'fastest';
+      }
       case AnimcationDuration.infinite: {
         return 'infinite';
       }
@@ -702,5 +708,6 @@ export enum AnimcationDuration {
   slower = 3000,
   fast = 800,
   faster = 500,
+  fastest = 200,
   infinite = 86400000
 }

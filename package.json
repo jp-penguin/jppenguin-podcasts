@@ -48,6 +48,7 @@
     "@angular/animations": "^7.0.1",
     "@angular/cdk": "^7.0.1",
     "@angular/material": "^7.0.1",
+    "@fortawesome/fontawesome-free": "^5.5.0",
     "@types/dateformat": "^1.0.1",
     "animate.css": "^3.7.0",
     "axios": "^0.18.0",

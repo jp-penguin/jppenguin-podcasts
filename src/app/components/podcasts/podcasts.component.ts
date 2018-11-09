@@ -47,7 +47,15 @@ export class PodcastsComponent implements OnInit {
 
     console.log((temp.nativeElement as Element).classList.add('show'));
     // (this.overlay.nativeElement as Element).classList.add('animated', 'fadeIn');
-    this.animationService.fadeIn(this.overlay, AnimcationDuration.faster);
+    this.overlayDisabled = true;
+    this.animationService
+      .fadeIn(this.overlay, AnimcationDuration.fastest)
+      .then((duration: AnimcationDuration) => {
+        setTimeout(() => {
+          // this.animationService.removeAnimateCss(this.overlay
+          //   .nativeElement as Element);
+        }, duration);
+      });
   }
   overlayClick(x: string, event: Event) {
     console.log();
@@ -60,9 +68,10 @@ export class PodcastsComponent implements OnInit {
           ((a as ElementRef).nativeElement as Element).getAttribute('d-m') === x
         );
       });
+      this.overlayDisabled = false;
 
       this.animationService
-        .fadeOut(this.overlay, AnimcationDuration.faster)
+        .fadeOut(this.overlay, AnimcationDuration.fastest)
         .then((duration: AnimcationDuration) => {
           console.log(duration);
 
@@ -70,6 +79,8 @@ export class PodcastsComponent implements OnInit {
             console.log(
               (temp.nativeElement as Element).classList.remove('show')
             );
+            this.animationService.removeAnimateCss(this.overlay
+              .nativeElement as Element);
           }, duration);
         });
     }

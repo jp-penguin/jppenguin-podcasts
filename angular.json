@@ -24,7 +24,7 @@
               "src/favicon.256x256.png",
               "src/favicon.512x512.png"
             ],
-            "styles": ["src/styles.scss"],
+            "styles": ["src/styles.scss", "node_modules/@fortawesome/fontawesome-free/css/all.css"],
             "scripts": []
           },
           "configurations": {
@@ -38,12 +38,10 @@
               "extractLicenses": true,
               "vendorChunk": false,
               "buildOptimizer": false,
-              "fileReplacements": [
-                {
-                  "replace": "src/environments/environment.ts",
-                  "with": "src/environments/environment.dev.ts"
-                }
-              ]
+              "fileReplacements": [{
+                "replace": "src/environments/environment.ts",
+                "with": "src/environments/environment.dev.ts"
+              }]
             },
             "production": {
               "optimization": true,
@@ -55,12 +53,10 @@
               "extractLicenses": true,
               "vendorChunk": false,
               "buildOptimizer": true,
-              "fileReplacements": [
-                {
-                  "replace": "src/environments/environment.ts",
-                  "with": "src/environments/environment.prod.ts"
-                }
-              ]
+              "fileReplacements": [{
+                "replace": "src/environments/environment.ts",
+                "with": "src/environments/environment.prod.ts"
+              }]
             }
           }
         },
@@ -92,7 +88,7 @@
             "tsConfig": "src/tsconfig.spec.json",
             "karmaConfig": "src/karma.conf.js",
             "scripts": [],
-            "styles": ["src/styles.scss"],
+            "styles": ["src/styles.scss", "node_modules/@fortawesome/fontawesome-free/css/all.css"],
             "assets": [
               "src/assets",
               "src/favicon.ico",
