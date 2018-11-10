@@ -37,6 +37,7 @@ import { DownloadedComponent } from './components/downloaded/downloaded.componen
 import { PlayerComponent } from './components/player/player.component';
 import { PlayerService } from './services/player.service';
 import { CommonModule } from '@angular/common';
+import { SecondsConverterPipe } from './pipes/seconds-converter.pipe';
 
 // AoT requires an exported function for factories
 export function HttpLoaderFactory(http: HttpClient) {
@@ -57,7 +58,8 @@ export function HttpLoaderFactory(http: HttpClient) {
     PlaylistComponent,
     UnplayedComponent,
     DownloadedComponent,
-    PlayerComponent
+    PlayerComponent,
+    SecondsConverterPipe
   ],
   imports: [
     BrowserModule,

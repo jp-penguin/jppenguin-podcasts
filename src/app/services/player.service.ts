@@ -11,13 +11,14 @@ import * as lodash from 'lodash';
 export class PlayerService {
   public minMaxValue = [0, 100, 0];
   public podcastEpisode: PodcastEpisodeModel;
-  public audioPlayer = new Audio();
+  public audioPlayer: HTMLAudioElement | HTMLVideoElement = new Audio();
   constructor(private saveState: SaveStateService) {
     // this.audioPlayer.addEventListener('loadstart', () => {
     //   this.timeUpdate();
     // });
     this.audioPlayer.addEventListener('timeupdate', () => {
       this.podcastEpisode.durationActual = this.audioPlayer.duration;
+      // this.audioPlayer.srcObject
       this.timeUpdate();
     });
     // this.audioPlayer.addEventListener('timeupdate', this.timeUpdate);

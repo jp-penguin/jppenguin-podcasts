@@ -171,18 +171,19 @@
       </button>
     </div>
     <div class="row controls-bottom">
-      <span>{{ playerService.audioPlayer.currentTime }}</span>
+      <span>{{
+        playerService.audioPlayer.currentTime | secondsConverter
+      }}</span>
       <input
-        [click]="audioChange(event)"
         type="range"
         name="timeRange"
         id="timeRange"
         min="0"
         max="{{ playerService.audioPlayer.duration }}"
-        value="{{ playerService.audioPlayer.currentTime }}"
+        value="{{ playerService.audioPlayer.currentTime}}"
       />
-      <span>{{ playerService.audioPlayer.duration }}</span>
+      <span>{{ playerService.audioPlayer.duration | secondsConverter }}</span>
     </div>
   </div>
-  <div class="speaker"></div>
+  <div class="speaker"><video #video></video></div>
 </div>
